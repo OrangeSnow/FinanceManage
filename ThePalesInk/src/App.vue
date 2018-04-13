@@ -22,6 +22,12 @@
                 </svg>
                 <span slot="label">记账</span>
             </tabbar-item>
+            <tabbar-item :selected="navIndex == 2" link="/account">
+                <svg slot="icon" class="nav-item nav-account-item">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-account"></use>
+                </svg>
+                <span slot="label">小管家</span>
+            </tabbar-item>
             <tabbar-item :selected="navIndex == 3" link="/bill">
                 <svg slot="icon" class="nav-item nav-bill-item">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-bill"></use>
