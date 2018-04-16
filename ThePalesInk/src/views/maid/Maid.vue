@@ -7,40 +7,14 @@
                     </div>
                     <div class='inputBox'>
                               <input type="text" class='messageText'>
-                              <input type="button" class='sendBtn' value='发送'>
+                              <input type="button" class='sendBtn' value='发送' v-on:click="SendBtn()">
                     </div>
           </div>
 
 
     </div>
 </template>
-<script>
-    document.querySelector('.sendBtn').onclick = function(event) {
 
-              // 获取 用户输入的 文本框的值
-              var inputValue = document.querySelector('.messageText').value;
-
-              // 创建 div  设置class 为 self  将 输入的内容 设置进去
-              var createDiv = document.createElement('div');
-              createDiv.className = 'self';
-              createDiv.innerText = inputValue;
-              // 添加到messageBox 中
-              document.querySelector('.messageBox').appendChild(createDiv);                       
-              var otherDiv = document.createElement('div');
-              otherDiv.className = 'other';
-              if(createDiv.innerText=="四月报表"){
-              otherDiv.innerText = "你四月第一次工作，挣了3000元哦！";
-              }
-              else if(createDiv.innerText=="五月报表"){
-                otherDiv.innerText = "五月你只工作了半个月，因此工资只有1500哦。";
-              }
-              else{
-                otherDiv.innerText = "主人你在说什么，我怎么听不懂？";
-              }
-              // 添加到messageBox 中
-              document.querySelector('.messageBox').appendChild(otherDiv);
-    }
-</script>
 <script>
     import { Scroller, Spinner, XDialog} from 'vux'
     import GestureMobile from '../../assets/lib/GestureMobile'
@@ -68,6 +42,38 @@
             this.setNavIndex();
         },
         methods: {
+			SendBtn(){
+				// 获取 用户输入的 文本框的值
+				var inputValue = document.querySelector('.messageText').value;
+				//创造声音
+				var allsound = speechSynthesis.getVoices();
+
+				// 创建 div  设置class 为 self  将 输入的内容 设置进去
+				var createDiv = document.createElement('div');
+				createDiv.className = 'self';
+				createDiv.innerText = inputValue;
+				// 添加到messageBox 中
+				document.querySelector('.messageBox').appendChild(createDiv);                       
+				var otherDiv = document.createElement('div');
+				otherDiv.className = 'other';
+				if(createDiv.innerText=="四月报表"){
+				otherDiv.innerText = "你四月第一次工作，挣了3000元哦！";
+				}
+				else if(createDiv.innerText=="五月报表"){
+					otherDiv.innerText = "五月你只工作了半个月，因此工资只有1500哦。";
+				}
+				else if(createDiv.innerText=="我想和你聊聊"){
+					otherDiv.innerText = "滚犊子，老娘不约！";
+				}
+				else{
+					otherDiv.innerText = "主人你在说什么，我怎么听不懂？";
+				}
+			  var utterThis = new window.SpeechSynthesisUtterance(otherDiv.innerText);
+			  window.speechSynthesis.speak(utterThis);
+              // 添加到messageBox 中
+              document.querySelector('.messageBox').appendChild(otherDiv);
+			  
+			},
             /**安全退出*/
             safeExit () {
                 this.is_popup = false;
