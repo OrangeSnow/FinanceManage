@@ -65,6 +65,9 @@
 				else if(createDiv.innerText=="我想和你聊聊"){
 					otherDiv.innerText = "滚犊子，老娘不约！";
 				}
+				else if(createDiv.innerText=="我改怎么省钱"){
+					otherDiv.innerText = "根据大数据分析，您总是买买买，您就是个败家子！";
+				}
 				else{
 					otherDiv.innerText = "主人你在说什么，我怎么听不懂？";
 				}
