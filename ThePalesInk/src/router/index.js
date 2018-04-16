@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Guide from '../views/guide/Guide.vue'
 import Home from '../views/home/Home.vue'
 import Account from '../views/account/Account.vue'
+import Maid from '../views/maid/Maid.vue'
 import AccountIndex from '../views/account/children/AccountIndex.vue'
 import Consumption from '../views/account/children/Consumption.vue'
 import Earn from '../views/account/children/Earn.vue'
@@ -92,6 +93,15 @@ const router = new Router({
                     }
                 }
             ]
+        },
+        /**自动机器人*/
+        {
+            path: '/maid',
+            name: 'maid',
+            component: Maid,
+            meta: {
+                status: 10
+            }
         },
         /**账单页面*/
         {

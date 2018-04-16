@@ -22,12 +22,6 @@
                 </svg>
                 <span slot="label">记账</span>
             </tabbar-item>
-            <tabbar-item :selected="navIndex == 2" link="/account">
-                <svg slot="icon" class="nav-item nav-account-item">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-account"></use>
-                </svg>
-                <span slot="label">小管家</span>
-            </tabbar-item>
             <tabbar-item :selected="navIndex == 3" link="/bill">
                 <svg slot="icon" class="nav-item nav-bill-item">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-bill"></use>
@@ -39,6 +33,12 @@
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-chart"></use>
                 </svg>
                 <span slot="label">分析</span>
+            </tabbar-item>
+            <tabbar-item :selected="navIndex == 5" link="/maid">
+                <svg slot="icon" class="nav-item nav-chart-item">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-chart"></use>
+                </svg>
+                <span slot="label">理财女仆</span>
             </tabbar-item>
         </tabbar>
         <!--/导航条-->
