@@ -37,7 +37,12 @@
         methods: {
             StoreInit(){
                 //1、获取本地存储的对话内容
-                    var storeChat=sessionStorage.storeChat;
+                    if(sessionStorage.storeChat==undefined){
+                        sessionStorage.storeChat="主人，萌萌酱正在为您服务！";
+                    }
+                    else{
+                        var storeChat=sessionStorage.storeChat;
+                    }                   
                 //2、存储的字符串转化为数组
                     var storeChatArray=storeChat.split(',');
                 
@@ -107,7 +112,7 @@
                    
                 //6、数组变字符串存入sessitionStorage
                     sessionStorage.storeChat=storeChatString;
-                },500);
+                },300);
 			}
         }
     }
