@@ -36,7 +36,7 @@
             </tabbar-item>
             <tabbar-item :selected="navIndex == 5" link="/maid">
                 <svg slot="icon" class="nav-item nav-chart-item">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-chart"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-account"></use>
                 </svg>
                 <span slot="label">理财女仆</span>
             </tabbar-item>
