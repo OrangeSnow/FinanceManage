@@ -1,48 +1,40 @@
 <template>
-    <div class="container-view">
-        <head-title :title="'聊天室'"></head-title>
-        <div class="chart-wrap">
-            <scroller lock-x
-                      height="-118"
-                      :scrollbarY="true"
-                      @on-scroll="onScroll"
-                      ref="chartScrollEvent" style="background-color: yellow;padding-bottom:50px;">
-                <div class="chart-con">
-                    <div class="messageBox"></div>
-                </div>
-            </scroller>
+        <div class="container">
+            <div class="messageBox">
+            </div>
+            <div class='inputBox'>
+                <textarea class='messageText'></textarea>
+                <input class='sendbtn' value='发送' v-on:click="SendBtn()" v-on:keyup.13="SendBtn"/>
+            </div>
         </div>
-        <div class='inputBox' >
-            <textarea class='messageText'></textarea>
-            <input class='sendbtn' type="button" value='发送' v-on:click="SendBtn()" v-on:keyup.13="SendBtn"/>
-        </div>
-    </div>
+
 </template>
+
 <script>
+    import { Scroller, Spinner, XDialog} from 'vux'
+    import GestureMobile from '../../assets/lib/GestureMobile'
     import types from '../../store/mutation-types'
-    import headTitle from '../../components/head-title.vue'
+    import CountUp from '../../assets/lib/countUp'
     import Util from '../../assets/lib/Util'
     import Tool from '../../assets/lib/Tool'
-    import { Scroller } from 'vux'
     export default {
-        name: 'chart',
-        data () {
+        name: 'home',
+        data: function () {
             return {
-                consumption_chart_arr: [0,0,0,0,0,0,0,0],
-                earn_chart_arr: [0,0,0]
+                is_open: false,
+                total_balance: 0,
+                is_popup: false
             }
         },
-        components: {
+        components:{
             Scroller,
-            headTitle
+            Spinner,
+            XDialog
         },
         mounted () {
             this.StoreInit();
         },
         methods: {
-            onScroll (pos) {
-                this.scrollTop = pos.top;
-            },
             StoreInit(){
                 //1、获取本地存储的对话内容
                     var storeChat;
@@ -56,9 +48,11 @@
                     }
                     else{
                         storeChat=sessionStorage.storeChat;
-                    }                
+                    }
+                    console.log(sessionStorage.storeChat+"test");                   
                 //2、存储的字符串转化为数组
-                    var storeChatArray=storeChat.split(',');   
+                    var storeChatArray=storeChat.split(',');
+                    console.log(storeChatArray);   
                 //3、遍历数组输出
                     for(var i=0;i<storeChatArray.length;i++){
                         if(i%2==1){
@@ -77,22 +71,24 @@
                         }
                     }
             },
-            SendBtn(){
+			SendBtn(){
                 //4、对话内容
                     var storeChatString=sessionStorage.storeChat;
-                // 获取 用户输入的 文本框的值
-                    var inputValue = document.querySelector('.messageText').value;
+                    console.log(storeChatString);
+				// 获取 用户输入的 文本框的值
+				    var inputValue = document.querySelector('.messageText').value;
                     storeChatString=storeChatString+","+inputValue;
-                // 创造声音
-                    var allsound = speechSynthesis.getVoices();
+                    console.log(storeChatString);
+				// 创造声音
+				    var allsound = speechSynthesis.getVoices();
 
-                // 创建 div  设置class 为 self,将输入的内容设置进去
-                    var createDiv = document.createElement('div');
-                    createDiv.className = 'self';
-                    createDiv.innerText = inputValue;
+				// 创建 div  设置class 为 self,将输入的内容设置进去
+				    var createDiv = document.createElement('div');
+				    createDiv.className = 'self';
+				    createDiv.innerText = inputValue;
                 // 添加到messageBox 中
                     document.querySelector('.messageBox').appendChild(createDiv); 
-                
+				
                     setTimeout(function(){                      
                         var otherDiv = document.createElement('div');
                         otherDiv.className = 'other';
@@ -124,7 +120,7 @@
                 //6、数组变字符串存入sessitionStorage
                     sessionStorage.storeChat=storeChatString;
                 },300);
-            }
+			}
         }
     }
 </script>
@@ -139,12 +135,15 @@
     }
           
     .messageBox {
-        padding:5px;
+        height: 100%;
+        width: 100%;
         background: yellowgreen;
-    }    
+        overflow:scroll;
+    }
+          
     .inputBox {
         position:absolute;
-        bottom:0px;
+        bottom:54px;
         padding:2px;
         width:100%;
         height:50px;
@@ -180,12 +179,10 @@
         height:60px;
         background: brown;
         text-align: right;
-        margin-top:5px;
     }
           
     .other {
         padding:2px 14px;
         background: pink;
-        margin-top:5px;
     }
 </style>

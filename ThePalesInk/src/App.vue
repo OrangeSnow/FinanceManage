@@ -4,7 +4,7 @@
         <transition :name="animateName">
             <!--<keep-alive>-->
                 <router-view></router-view>
-            <!--</keep-alive>-->
+            <!--</keep-alive>#type-sgls #type-cyhs #type-shrc咖啡杯 #type-jbgz-->
         </transition>
         <!--/主体内容视图-->
 
@@ -36,9 +36,17 @@
             </tabbar-item>
             <tabbar-item :selected="navIndex == 5" link="/maid">
                 <svg slot="icon" class="nav-item nav-chart-item">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-account"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#type-shrc"></use>
                 </svg>
                 <span slot="label">理财女仆</span>
+            </tabbar-item>
+
+
+            <tabbar-item :selected="navIndex == 6" link="/test">
+                <svg slot="icon" class="nav-item nav-home-item">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-home"></use>
+                </svg>
+                <span slot="label">测试</span>
             </tabbar-item>
         </tabbar>
         <!--/导航条-->
@@ -131,12 +139,14 @@
     .weui-bar__item_on{
         .nav-item{
             fill: #58B7FF;
+            background-color:pink;
         }
         span{
             padding: 0 3px;
             border-radius: 5px;
             color: #fff !important;
             background-color: #58B7FF;
+            background-color:pink;
         }
     }
     .vux-pop-in-enter-active,.vux-pop-in-leave-active,.vux-pop-out-enter-active,.vux-pop-out-leave-active {

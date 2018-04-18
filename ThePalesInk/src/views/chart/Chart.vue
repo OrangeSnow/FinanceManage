@@ -10,11 +10,11 @@
                 <div class="chart-con">
                     <div class="chart-item">
                         <h2 class="chart-title">消费状况：</h2>
-                        <canvas id="consumption-chart" width="400" height="400"></canvas>
+                        <canvas id="consumption-chart" width="300" height="300"></canvas>
                     </div>
                     <div class="chart-item">
                         <h2 class="chart-title">入账状况：</h2>
-                        <canvas id="earn-chart" width="400" height="400"></canvas>
+                        <canvas id="earn-chart" width="300" height="300"></canvas>
                     </div>
                 </div>
             </scroller>
