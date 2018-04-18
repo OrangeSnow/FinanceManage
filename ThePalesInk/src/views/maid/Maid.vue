@@ -37,18 +37,23 @@
         methods: {
             StoreInit(){
                 //1、获取本地存储的对话内容
+                    var storeChat;
                     if(sessionStorage.storeChat==undefined){
                         sessionStorage.storeChat="主人，萌萌酱正在为您服务！";
+                        storeChat=sessionStorage.storeChat;
+                        //sessionStorage.storeChat="";
+                        //storeChat="";
                     }
                     else{
-                        var storeChat=sessionStorage.storeChat;
-                    }                   
+                        storeChat=sessionStorage.storeChat;
+                    }
+                    console.log(sessionStorage.storeChat+"test");                   
                 //2、存储的字符串转化为数组
                     var storeChatArray=storeChat.split(',');
-                
+                    console.log(storeChatArray);   
                 //3、遍历数组输出
                     for(var i=0;i<storeChatArray.length;i++){
-                        if(i%2==0){
+                        if(i%2==1){
                             var createDivOld = document.createElement('div');
                             createDivOld.className = 'self';
                             createDivOld.innerText = storeChatArray[i];
@@ -156,9 +161,10 @@
         font-size: 14px;
         border-width: 0px;
         background: hotpink;
-        width:23%;
-        height:50px;
+        width:22%;
+        height:49px;
         top:-21px;
+        text-align: center;
     }
           
     .messageBox div {
@@ -169,12 +175,12 @@
     .self {
         padding:2px 14px;
         height:60px;
-        background: pink;
+        background: white;
+        text-align: right;
     }
           
     .other {
         padding:2px 14px;
-        text-align: right;
-        background: white;
+        background: pink;
     }
 </style>

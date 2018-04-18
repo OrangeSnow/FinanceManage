@@ -177,21 +177,21 @@ router.beforeEach( (to, from, next) => {
     let is_not_first = Tool.dataToLocalStorageOperate.achieve('is_not_first');
     /**获取用户是否已经登录的状态*/
     let user = Tool.dataToSessionStorageOperate.achieve('user');
-    console.log(2)
+    //console.log(2)
     if ( !is_not_first && to.path != '/guide' ) {
         /**用户第一次进入且路径跳转不是为引导页的时候，跳转到引导页*/
-        console.log(3)
+        //console.log(3)
         next('/guide');
     } else if ( is_not_first && !user && to.path != '/login' && to.path != '/register' && to.path != '/agreement' && to.path != '/retrieve') {
-        console.log(4)
+        //console.log(4)
         /**用户没有登录，且用户跳转的路径不是登录页也不能是注册页的时候*/
         next('/login');
     } else if ( is_not_first && user && (to.path == '/login' || to.path == '/register')) {
-        console.log(6)
+        //console.log(6)
         /**用户已经登录，且跳转的页面是登录页或者注册页的时候*/
         next('/')
     } else if( is_not_first && to.path == '/guide' ) {
-        console.log(7)
+        //console.log(7)
         /**用户不是第一次进入且跳转路径为引导页的时候*/
         next('/');
     } else next();
