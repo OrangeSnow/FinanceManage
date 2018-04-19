@@ -6,7 +6,10 @@
                       height="-118"
                       :scrollbarY="true"
                       @on-scroll="onScroll"
-                      ref="chartScrollEvent" style="background-color: yellow;padding-bottom:50px;">
+                      ref="chartScrollEvent"
+                      style=" background-color: yellow"
+                      
+                      >
                 <div class="chart-con">
                     <div class="messageBox"></div>
                 </div>
@@ -23,13 +26,15 @@
     import headTitle from '../../components/head-title.vue'
     import Util from '../../assets/lib/Util'
     import Tool from '../../assets/lib/Tool'
+    import bc from '../../../static/img/bc.jpg'
     import { Scroller } from 'vux'
     export default {
         name: 'chart',
         data () {
             return {
                 consumption_chart_arr: [0,0,0,0,0,0,0,0],
-                earn_chart_arr: [0,0,0]
+                earn_chart_arr: [0,0,0],
+                bc: bc
             }
         },
         components: {
@@ -65,10 +70,7 @@
                             // 添加到messageBox 中
                             document.querySelector('.messageBox').appendChild(createDivOld);
 
-                            //箭头
-                            var createDivOld2 = document.createElement('div');
-                            createDivOld2.className = 'arrow';
-                            document.querySelector('.self').appendChild(createDivOld2);
+
                         }
                         else{
                             var otherDivOld = document.createElement('div');
@@ -76,11 +78,6 @@
                             otherDivOld.innerText = storeChatArray[i];
                             // 添加到messageBox 中
                             document.querySelector('.messageBox').appendChild(otherDivOld);
-
-                            //箭头
-                            var otherDivOld2 = document.createElement('div');
-                            otherDivOld2.className = 'arrow2';
-                            document.querySelector('.other').appendChild(otherDivOld2);
                         }
                     }
             },
@@ -101,17 +98,9 @@
                 // 添加到messageBox 中
                     document.querySelector('.messageBox').appendChild(createDiv); 
 
-                //箭头
-                    var createDiv2 = document.createElement('div');
-                    createDiv2.className = 'arrow';
-                    document.querySelector('.self').appendChild(createDiv2);
-
                     setTimeout(function(){                      
                         var otherDiv = document.createElement('div');
                         otherDiv.className = 'other';
-                //箭头
-                        var otherDiv2 = document.createElement('div');
-                        otherDiv2.className = 'arrow2';
 
                         if(inputValue=="四月报表"){
                             otherDiv.innerText = "你四月第一次工作，挣了3000元哦！";
@@ -135,8 +124,6 @@
                 // 添加到messageBox 中
                     document.querySelector('.messageBox').appendChild(otherDiv);
                     
-                //箭头
-                    document.querySelector('.other').appendChild(otherDiv2);
 
                 //5、字符串拼接
                     storeChatString=storeChatString+","+otherDiv.innerText;
@@ -150,7 +137,7 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
-
+    
     .container {
         height: 100%;
         width: 100%;
@@ -199,19 +186,10 @@
         width:100px;  
         padding:9px 9px;  
         background:#F8C301;  
-        border-radius:5px; /* 圆角 */  
+        border-radius:5px; /* 圆角 */ 
+
     }
-          
-    .other {
-        margin-top:5px;
-        position:relative; 
-        margin-left:10px; 
-        width:150px;  
-        padding:9px 5px;  
-        background:pink;  
-        border-radius:5px; /* 圆角 */  
-    }
-    .arrow {  
+    .self *{
         position:absolute;  
         top:8px;  
         right:-16px; /* 圆角的位置需要细心调试哦 */  
@@ -221,8 +199,17 @@
         border-right:8px solid  rgba(77,73,72,0);
         border-bottom:8px solid  rgba(77,73,72,0);
         border-left:8px solid  rgba(248,195,1,1);
-    } 
-    .arrow2 {  
+    }      
+    .other {
+        margin-top:5px;
+        position:relative; 
+        margin-left:10px; 
+        width:150px;  
+        padding:9px 5px;  
+        background:pink;  
+        border-radius:5px; /* 圆角 */  
+    }
+    .other *{  
         position:absolute;  
         top:8px;  
         left:-16px; /* 圆角的位置需要细心调试哦 */  
