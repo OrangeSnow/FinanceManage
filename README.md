@@ -16,7 +16,7 @@
 
 1、颜色转换工具：https://tools.guardui.net/nose/rgb_hex_color.html
 
-使用技术
+使用的关键技术
 
 1、语音合成：
 
@@ -25,3 +25,15 @@
    github地址：https://github.com/googlearchive/webplatform-samples
    
 3、
+
+使用的框架
+
+[1、Element](http://element-cn.eleme.io/#/zh-CN/component/icon)：icon图标、button按钮、switch开关、slider滑块、tag标签、树形控件tree、step步骤条、Carousel 走马灯
+
+[2、Mint UI](http://mint-ui.github.io/#!/zh-cn)：popup（各种方向弹出消息）、lazyload懒加载、range（控制条）、progress（上传文件，动态效果）、PaletteButton（底部跳出圆按钮）、switch按钮
+
+[3、font-awesome](https://fontawesome.com/how-to-use/js-component-packages)：font-awesome图标库
+
+[4、ECharts](http://echarts.baidu.com/echarts2/doc/doc.html)：
+
+[5、vux](https://doc.vux.li/zh-CN/)：vux Previewer图片放大、WechatEmotion表情、XCircle滑块圆圈调整、

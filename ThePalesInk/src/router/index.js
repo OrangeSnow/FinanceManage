@@ -8,6 +8,10 @@ import Maid from '../views/maid/Maid.vue'
 import Test from '../views/test/Test.vue'
 import AccountIndex from '../views/account/children/AccountIndex.vue'
 import Consumption from '../views/account/children/Consumption.vue'
+
+import AA from '../views/test/children/aa.vue'
+import CC from '../views/test/children/cc.vue'
+
 import Earn from '../views/account/children/Earn.vue'
 import Bill from '../views/bill/Bill.vue'
 import Chart from '../views/chart/Chart.vue'
@@ -104,13 +108,32 @@ const router = new Router({
                 status: 10
             }
         },
+        /**测试*/
         {
             path: '/test',
             name: 'test',
             component: Test,
             meta: {
-                status: 10
-            }
+                status: 11
+            },
+            children: [
+                {
+                    path: '',
+                    name: 'aa',
+                    component: AA,
+                    meta: {
+                        status: 12
+                    }
+                },
+                {
+                    path: 'cc',
+                    name: 'cc',
+                    component: CC,
+                    meta: {
+                        status: 13
+                    }
+                }
+            ]
         },
         /**账单页面*/
         {

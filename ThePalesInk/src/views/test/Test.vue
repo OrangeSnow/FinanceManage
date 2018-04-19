@@ -1,72 +1,135 @@
 <template>
     <div class="container-view">
-        <head-title :title="'分析：'"></head-title>
-        <div class="chart-wrap">
-            <scroller lock-x
-                      height="-118"
-                      :scrollbarY="true"
-                      @on-scroll="onScroll"
-                      ref="chartScrollEvent">
-                <div class="chart-con">                            
-                    <div class="maid">哈哈哈哈哈哈哈</div>
-                    <div class="maid">哈哈哈哈哈哈哈</div>
-                    <div class="maid">哈哈哈哈哈哈哈</div>
-                </div>
-            </scroller>
-        </div>
+        <transition :name="animateName">
+            <!--<keep-alive>-->
+            <router-view></router-view>
+            <!--</keep-alive>-->
+        </transition>
     </div>
 </template>
 <script>
-    import types from '../../store/mutation-types'
-    import headTitle from '../../components/head-title.vue'
-    import Util from '../../assets/lib/Util'
-    import Tool from '../../assets/lib/Tool'
-    import { Scroller } from 'vux'
     export default {
-        name: 'chart',
-        data () {
-            return {
-                consumption_chart_arr: [0,0,0,0,0,0,0,0],
-                earn_chart_arr: [0,0,0]
+        name: 'account',
+        computed: {
+            animateName () {
+                return this.$store.state.animate_name;
             }
-        },
-        components: {
-            Scroller,
-            headTitle
-        },
-        created () {
-            this.$store.commit(types.SET_NAV_INDEX,'4');
-            this.fetchBillData();
-        },
-        methods: {
-            onScroll (pos) {
-                this.scrollTop = pos.top;
-            }
-            
         }
     }
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
-    .chart-wrap{
-        @extend %oya;
-        @extend %pa;
+    .consumption-wrap,
+    .earn-wrap,
+    .account-wrap{
         @extend %w100;
-        @extend %ios;
-        @extend %b0;
-        top: 64px;
+        @extend %h100;
+        @extend %oya;
     }
-    .chart-title{
-        @extend %f14;
-        @extend %fwn;
-        color: #58B7FF;
+    .vux-popup-picker-header-menu-right,
+    .dp-right{
+        font-size: 16px !important;
+        color: #58B7FF !important;
     }
-    .chart-item{
-        padding: 10px;
+    .dp-left{
+        font-size: 16px !important;
+        color: #828282 !important;
     }
-    .maid{
-    height:500px;
-    width:500px;
-    background-color:pink;
+
+    .input-warp{
+        padding: 0 10px;
+    }
+    .input-required{
+        @extend %pr;
+        &:before{
+            content: '*';
+            @extend %pa;
+            @extend %f16;
+            color: red;
+        }
+    }
+    .bill-time-item,
+    .input-item{
+        @extend %pr;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #ccc;
+        transition: border-bottom .5s;
+        .vux-cell-box:before {
+            @extend %dn;
+        }
+        .weui-cell{
+            padding: 0 10px;
+        }
+        .weui-cell__primary,
+        .vux-cell-primary,
+        .vux-datetime-value,
+        p,
+        .weui-label,
+        .vux-label{
+            @extend %f14;
+        }
+        .weui-input{
+            @extend %tar;
+        }
+        .weui-input,
+        .vux-popup-picker-value{
+            @extend %c9;
+        }
+        .week{
+            @extend %tac;
+        }
+        .vux-prev-icon, .vux-next-icon{
+            border: 1px solid #58B7FF;
+            border-top: none;
+            border-right: none;
+        }
+        .inline-calendar td.current > span {
+            background-color: #58B7FF;
+        }
+        .inline-calendar td.is-today, .inline-calendar td.is-today.is-disabled {
+            color: #58B7FF;
+        }
+        &:after,
+        &:before{
+            content: '';
+            @extend %pa;
+            @extend %b0;
+            width: 1px;
+            height: 5px;
+            background-color: #ccc;
+        }
+        &:after{
+            @extend %r0;
+        }
+        &:before{
+            @extend %l0;
+        }
+    }
+    .sure-btn{
+        @extend %db;
+        @extend %cp;
+        @extend %f16;
+        @extend %tac;
+        @extend %cfff;
+        margin: 20px 20px 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 5px;
+        background-color: #bbb;
+        box-shadow: 0 3px 0 0 #999;
+        transition: background-color .5s;
+    }
+    .earn-wrap{
+        .sure-btn.sure-active-true{
+            background-color: #69ce72;
+            box-shadow: 0 3px 0 0 #13CE66;
+        }
+    }
+    .consumption-wrap{
+        .sure-btn.sure-active-true{
+            background-color: #FF4949;
+            box-shadow: 0 3px 0 0 red;
+        }
     }
 </style>

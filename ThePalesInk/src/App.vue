@@ -35,8 +35,8 @@
                 <span slot="label">分析</span>
             </tabbar-item>
             <tabbar-item :selected="navIndex == 5" link="/maid">
-                <svg slot="icon" class="nav-item nav-chart-item">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#type-shrc"></use>
+                <svg slot="icon" class="nav-item nav-maid-item">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#type-sgls"></use>
                 </svg>
                 <span slot="label">理财女仆</span>
             </tabbar-item>
@@ -105,6 +105,7 @@
         @extend %oh;
         bottom: 54px;
         background-color: #F9FAFC;
+        border:1px solid red;
     }
     .home-wrap{
         bottom: 0;
@@ -129,6 +130,11 @@
             margin-top: 5px;
             width: 23px;
             height: 23px;
+        }
+        &.nav-maid-item{
+            margin-top: 4px;
+            width: 24px;
+            height: 24px;
         }
     }
     .weui-tabbar__item{
