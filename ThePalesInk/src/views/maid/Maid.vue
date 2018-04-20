@@ -7,10 +7,10 @@
                       :scrollbarY="true"
                       @on-scroll="onScroll"
                       ref="chartScrollEvent"
-                      style=" background-color: yellow"
-                      
+                      style=""
+                      class="sss"
                       >
-                <div class="chart-con">
+                <div class="chart-con-maid">
                     <div class="messageBox"></div>
                 </div>
             </scroller>
@@ -19,6 +19,7 @@
             <textarea class='messageText'></textarea>
             <input class='sendbtn' type="button" value='发送' v-on:click="SendBtn()" v-on:keyup.13="SendBtn"/>
         </div>
+        <div class="speechJump"><a href="#/speech">语音</a></div>
     </div>
 </template>
 <script>
@@ -137,7 +138,12 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
-    
+    .sss{
+        background-color: #D1E9E9;
+        background-image:url('../../../static/img/bc.gif');
+        background-size: cover;
+        padding:10px 15px;
+    }
     .container {
         height: 100%;
         width: 100%;
@@ -147,8 +153,11 @@
           
     .messageBox {
         padding:5px 5px 103px;
-        background: yellowgreen;
-    }    
+        border-radius:6px;
+        background-color:rgba(119,136,153,0.5);
+        box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,0 .5em 1em rgba(0, 0, 0, 0.6);
+        text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+    }  
     .inputBox {
         position:absolute;
         bottom:0px;
@@ -158,6 +167,15 @@
         background: skyblue;
         border:1px solid blue;
         overflow:hidden;
+    }
+    .speechJump{
+        position:absolute;
+        top:3px;
+        right:3px;
+        padding:2px;
+        width:40px;
+        height:40px;
+        background: green;
     }     
     .messageText {
         font-size: 30px;
@@ -176,20 +194,27 @@
         height:40px;
         top:-16px;
         text-align: center;
-    }
-          
+    }    
     .self {
         text-align: right;
         margin-top:5px;
-        margin-left:253px;
+        margin-left:258px;
         position:relative;  
-        width:100px;  
-        padding:9px 9px;  
+        width:80px;  
+        padding:9px 19px 9px 9px;  
         background:#F8C301;  
-        border-radius:5px; /* 圆角 */ 
-
+        border-radius:5px; /* 圆角 F8C301*/
+        /* 
+        border-top:1px solid  rgba(255,192,203,1);
+        border-right:8px solid  rgba(2,19,203,1);
+        border-bottom:1px solid  rgba(255,192,203,1);
+        border-left:1px solid  rgba(255,192,203,1);
+        background-image: url('../../../static/img/arrow_right.png');
+        background-repeat: no-repeat;
+        background-position: 123px 10px;
+        */
     }
-    .self *{
+    .self::after{
         position:absolute;  
         top:8px;  
         right:-16px; /* 圆角的位置需要细心调试哦 */  
@@ -198,18 +223,19 @@
         border-top:8px solid  rgba(77,73,72,0);
         border-right:8px solid  rgba(77,73,72,0);
         border-bottom:8px solid  rgba(77,73,72,0);
-        border-left:8px solid  rgba(248,195,1,1);
-    }      
+        border-left:8px solid  rgba(255,192,203,1);
+    }
+         
     .other {
         margin-top:5px;
         position:relative; 
-        margin-left:10px; 
-        width:150px;  
+        margin-left:4px; 
+        width:140px;  
         padding:9px 5px;  
         background:pink;  
         border-radius:5px; /* 圆角 */  
     }
-    .other *{  
+    .other::after{  
         position:absolute;  
         top:8px;  
         left:-16px; /* 圆角的位置需要细心调试哦 */  

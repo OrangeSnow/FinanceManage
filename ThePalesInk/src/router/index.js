@@ -20,6 +20,8 @@ import Register from '../views/register/Register.vue'
 import Error from '../views/error/Error.vue'
 import Agreement from '../views/agreement/Agreement.vue'
 import Modify from '../views/modify/Modify.vue'
+
+import Speech from '../views/speech/Speech.vue'
 import Retrieve from '../views/retrieve/Retrieve.vue'
 
 import Tool from '../assets/lib/Tool'
@@ -106,6 +108,15 @@ const router = new Router({
             component: Maid,
             meta: {
                 status: 10
+            }
+        },
+        /**声音*/
+        {
+            path: '/speech',
+            name: 'speech',
+            component: Speech,
+            meta: {
+                status: 14
             }
         },
         /**测试*/

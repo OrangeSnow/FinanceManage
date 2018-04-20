@@ -19,6 +19,7 @@
 使用的关键技术
 
 1、语音合成：MDN文档： https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesis
+
 			DEMO：  https://github.com/mdn/web-speech-api/tree/master/speak-easy-synthesis
 
 2、谷歌在线语音识别demo：https://www.google.com/intl/en/chrome/demos/speech.html
@@ -38,3 +39,8 @@
 [4、ECharts](http://echarts.baidu.com/echarts2/doc/doc.html)：
 
 [5、vux](https://doc.vux.li/zh-CN/)：vux Previewer图片放大、WechatEmotion表情、XCircle滑块圆圈调整、
+
+
+使用的小技术：
+
+1、磨砂玻璃效果：https://www.w3cplus.com/css3/css-secrets/frosted-glass-effect.html
