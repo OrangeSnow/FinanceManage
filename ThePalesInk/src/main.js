@@ -5,12 +5,17 @@ import router from './router'
 import axios from 'axios'
 import store from './store/index.js'
 import Tool from './assets/lib/Tool'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
 import './assets/lib/flexible.js'
 import './assets/lib/Chart'
 import  { ToastPlugin,LoadingPlugin} from 'vux'
 /**使用vux的插件提示功能*/
 Vue.use(ToastPlugin);
 Vue.use(LoadingPlugin);
+
+Vue.use(ElementUI);
 
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
