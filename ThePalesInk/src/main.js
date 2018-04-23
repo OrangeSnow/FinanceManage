@@ -5,8 +5,12 @@ import router from './router'
 import axios from 'axios'
 import store from './store/index.js'
 import Tool from './assets/lib/Tool'
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
 
 import './assets/lib/flexible.js'
 import './assets/lib/Chart'
@@ -16,6 +20,7 @@ Vue.use(ToastPlugin);
 Vue.use(LoadingPlugin);
 
 Vue.use(ElementUI);
+Vue.use(MuseUI);
 
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false;

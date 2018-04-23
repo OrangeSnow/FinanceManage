@@ -4,7 +4,7 @@
 
 参考项目慕课说明：http://www.imooc.com/article/18145
 
-前言
+## 前言
 
 感谢本次毕业设计参考项目的大佬，在慕课网上看到他留下的QQ群，加群后请教他很基础的问题，现在想想觉得自己问的问题略微有些弱智。
 
@@ -12,23 +12,19 @@
 
 希望最后能顺顺利利地把毕业设计做出来。
 
-使用工具
+## 使用工具
 
 1、颜色转换工具：https://tools.guardui.net/nose/rgb_hex_color.html
 
 使用的关键技术
 
-1、语音合成：MDN文档： https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesis
+1、语音合成：[MDN文档：](https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesis)、[DEMO：](https://github.com/mdn/web-speech-api/tree/master/speak-easy-synthesis)
 
-			DEMO：  https://github.com/mdn/web-speech-api/tree/master/speak-easy-synthesis
-
-2、谷歌在线语音识别demo：https://www.google.com/intl/en/chrome/demos/speech.html
-
-   github地址：https://github.com/googlearchive/webplatform-samples
+2、语音识别：[谷歌在线语音识别demo：](https://www.google.com/intl/en/chrome/demos/speech.html)、[语音识别的github地址：](https://github.com/googlearchive/webplatform-samples)
    
 
 
-使用的框架
+## 使用的框架
 
 [1、Element](http://element-cn.eleme.io/#/zh-CN/component/icon)：icon图标、button按钮、switch开关、slider滑块、tag标签、树形控件tree、step步骤条、Carousel 走马灯
 
@@ -40,7 +36,10 @@
 
 [5、vux](https://doc.vux.li/zh-CN/)：vux Previewer图片放大、WechatEmotion表情、XCircle滑块圆圈调整、
 
+[6、Muse-UI ](http://www.muse-ui.org/#/install)：这UI框架好漂亮简洁，想把饿了么舍弃掉了
 
-使用的小技术：
+
+
+## 使用的小技术：
 
 1、磨砂玻璃效果：https://www.w3cplus.com/css3/css-secrets/frosted-glass-effect.html
