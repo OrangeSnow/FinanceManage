@@ -151,7 +151,8 @@
         @extend %w100;
         @extend %ios;
         @extend %b0;
-        top: 64px;
+        top: 44px;
+        background-color: pink;
     }
     .chart-title{
         @extend %f14;
