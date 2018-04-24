@@ -33,8 +33,7 @@
         @extend %cfff;
         @extend %l0;
         @extend %r0;
-        @extend %t50;
-        transform: translate3d(0,-50%,0);
+     
     }
     .go-account{
         @extend %db;

@@ -3,8 +3,6 @@
         <head-title :title="'修改密码：'"></head-title>
         <div class="speechJump2"><a href="#/maid">聊天室</a></div>
 
-        <h1>Speech synthesiser</h1>
-        <p>Enter some text in the input below and press return  or the "play" button to hear it. change voices using the dropdown menu.</p>
         <form>
             <input type="text" class="txt">
             <!-- 频率调节 -->
@@ -20,11 +18,11 @@
                 <div class="clearfix"></div>
             </div>
             <!-- 语言选择按钮 -->
-          <select></select>
+          <!-- <select></select> -->
 
             <!-- 演示按钮 -->
           <div class="controls">
-              <button id="play" type="submit">Play</button>
+              <button id="play" type="submit" v-on:click="inithua()">测试</button>
           </div>
         </form>
     </div>
@@ -45,11 +43,33 @@
                 is_timer: false
             }
         },
-        created () {
-            
-        },
         methods: {
-            
+            inithua(){
+                //创建声音
+	            var synth = window.speechSynthesis;
+                //获取表格
+	            var inputForm = document.querySelector('form');
+	            //获取输入的文字
+                var inputTxt = document.querySelector('.txt');
+                //音调高低拉条
+	            var pitch = document.querySelector('#pitch');
+	            //高低的1
+	            var pitchValue = document.querySelector('.pitch-value');
+	            //频率高低拉条
+	            var rate = document.querySelector('#rate');
+	            //频率的1
+                var rateValue = document.querySelector('.rate-value');
+                
+                //最最核心就是下面四段代码，获取输入内容，改频率和音调
+                var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
+	            utterThis.pitch = pitch.value;
+	            utterThis.rate = rate.value;
+                synth.speak(utterThis);
+                
+                //声音高低和频率存在localStorage里面，在Maid.vue里读取
+                localStorage.speech_pitch = pitch.value;
+                localStorage.speech_rate = rate.value;
+            }
         },
         components: {
             headTitle,

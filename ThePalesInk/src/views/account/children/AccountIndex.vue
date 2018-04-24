@@ -1,6 +1,13 @@
 <template>
     <div class="account-wrap">
         <head-title :title="'记账：'"></head-title>
+        <div class="block">
+            <el-carousel height="220px">
+            <el-carousel-item v-for="item in imgArr" :key="item" class="img_bz">
+                <img :src="item.imgsrc" >
+            </el-carousel-item>
+            </el-carousel>
+        </div>
         <div class="go-btn-box">
             <a href="#/account/consumption" class="go-account go-consumption">消费</a>
             <a href="#/account/earn" class="go-account go-earn">入账</a>
@@ -12,6 +19,16 @@
     import headTitle from '../../../components/head-title.vue'
     export default {
         name: 'account_index',
+        data(){
+            return{
+                imgArr:[
+                    {imgsrc:'../../../../static/img/s1.jpg'},
+                    {imgsrc:'../../../../static/img/s2.jpg'},
+                    {imgsrc:'../../../../static/img/s3.jpg'},
+                    {imgsrc:'../../../../static/img/s4.jpg'}
+                ]
+            }
+        },
         created () {
             this.setNavIndex();
         },
@@ -27,6 +44,24 @@
 </script>
 <style lang="scss">
     @import "../../../assets/scss/define";
+    .img_bz{
+        background-size: cover;
+    }
+    .el-carousel__item h3 {
+        color: #475669;
+        font-size: 14px;
+        opacity: 0.75;
+        line-height: 150px;
+        margin: 0;
+    }
+
+    .el-carousel__item:nth-child(2n) {
+        background-color: #99a9bf;
+    }
+    
+    .el-carousel__item:nth-child(2n+1) {
+        background-color: #d3dce6;
+    }
     .go-btn-box{
         @extend %pa;
         @extend %tac;
@@ -35,7 +70,7 @@
         @extend %l0;
         @extend %r0;
         @extend %t50;
-        transform: translate3d(0,-50%,0);
+        transform: translate3d(0,-20%,0);
     }
     .go-account{
         @extend %db;

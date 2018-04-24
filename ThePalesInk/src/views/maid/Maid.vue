@@ -17,7 +17,8 @@
         </div>
         <div class='inputBox' >
             <textarea class='messageText'></textarea>
-            <input class='sendbtn' type="button" value='发送' v-on:click="SendBtn()" v-on:keyup.13="SendBtn"/>
+            <!-- <input class='sendbtn' type="button" value='发送' v-on:click="SendBtn()" v-on:keyup.13="SendBtn"/> -->
+            <mu-raised-button label="发送" class="demo-raised-button sendbtn" id="demo_change" v-on:click="SendBtn()" primary style=""/>
         </div>
         <div class="speechJump"><a href="#/speech">语音</a></div>
     </div>
@@ -183,17 +184,23 @@
         height:100%;
         width:75%;
     }
-          
+    .mu-ripple-wrapper{
+        width:10px;
+    }      
     .sendbtn {
         position:relative;
         display: inline-block;
         font-size: 14px;
         border-width: 0px;
         background: hotpink;
-        width:22%;
-        height:40px;
-        top:-16px;
+        top:-12px;
         text-align: center;
+        width:10px;
+    }
+    #demo_change{
+        min-width:0px;
+        width: 65px;
+        height:33px;
     }    
     .self {
         text-align: right;
