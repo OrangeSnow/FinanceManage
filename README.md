@@ -18,9 +18,9 @@
 
 使用的关键技术
 
-1、语音合成：[MDN文档：](https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesis)、[DEMO：](https://github.com/mdn/web-speech-api/tree/master/speak-easy-synthesis)
+1、语音合成：[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesis)、[语音合成频率和音调修改DEMO](https://github.com/mdn/web-speech-api/tree/master/speak-easy-synthesis)
 
-2、语音识别：[谷歌在线语音识别demo：](https://www.google.com/intl/en/chrome/demos/speech.html)、[语音识别的github地址：](https://github.com/googlearchive/webplatform-samples)
+2、语音识别：[谷歌在线语音识别demo](https://www.google.com/intl/en/chrome/demos/speech.html)、[语音识别的github地址](https://github.com/googlearchive/webplatform-samples)
    
 
 
