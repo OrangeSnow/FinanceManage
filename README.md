@@ -20,23 +20,22 @@
 
 1、语音合成：[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesis)、[语音合成频率和音调修改DEMO](https://github.com/mdn/web-speech-api/tree/master/speak-easy-synthesis)
 
-2、语音识别：[谷歌在线语音识别demo](https://www.google.com/intl/en/chrome/demos/speech.html)、[语音识别的github地址](https://github.com/googlearchive/webplatform-samples)
-   
+2、语音识别：[谷歌在线语音识别demo](https://www.google.com/intl/en/chrome/demos/speech.html)、[语音识别的github地址](https://github.com/googlearchive/webplatform-samples)、[欧拉米语音识别博客](https://blog.csdn.net/ls0609/article/details/73920229#comments)和[GitHub源码](https://github.com/ls0609/WebVoiceRecognize)（但这一个看评论，其他人调通了，为毛我这里总是有问题）
 
 
 ## 使用的框架
 
-[1、Element](http://element-cn.eleme.io/#/zh-CN/component/icon)：icon图标、button按钮、switch开关、slider滑块、tag标签、树形控件tree、step步骤条、Carousel 走马灯
+[1、Element](http://element-cn.eleme.io/#/zh-CN/component/icon)：icon图标、button按钮、switch开关、slider滑块（有数值）、tag标签、树形控件tree、step步骤条、Carousel 走马灯
 
 [2、Mint UI](http://mint-ui.github.io/#!/zh-cn)：popup（各种方向弹出消息）、lazyload懒加载、range（控制条）、progress（上传文件，动态效果）、PaletteButton（底部跳出圆按钮）、switch按钮
 
 [3、font-awesome](https://fontawesome.com/how-to-use/js-component-packages)：font-awesome图标库
 
-[4、ECharts](http://echarts.baidu.com/echarts2/doc/doc.html)：
+[4、ECharts](http://echarts.baidu.com/echarts2/doc/doc.html)：各种图表
 
 [5、vux](https://doc.vux.li/zh-CN/)：vux Previewer图片放大、WechatEmotion表情、XCircle滑块圆圈调整、
 
-[6、Muse-UI ](http://www.muse-ui.org/#/install)：这UI框架好漂亮简洁，想把饿了么舍弃掉了
+[6、Muse-UI ](http://www.muse-ui.org/#/install)：这UI框架好漂亮简洁，想把饿了么舍弃掉了，Avatar（图标）
 
 
 

@@ -20,7 +20,8 @@
             <!-- <input class='sendbtn' type="button" value='发送' v-on:click="SendBtn()" v-on:keyup.13="SendBtn"/> -->
             <mu-raised-button label="发送" class="demo-raised-button sendbtn" id="demo_change" v-on:click="SendBtn()" primary style=""/>
         </div>
-        <div class="speechJump"><a href="#/speech">语音</a></div>
+        <!-- <div class="speechJump"><a href="#/speech">语音</a></div> -->
+        <mu-float-button id="autoJump" icon="add" class="demo-float-button" href="#/speech"/>
     </div>
 </template>
 <script>
@@ -56,6 +57,8 @@
                     //初始问候声音
                         var soundstart = speechSynthesis.getVoices();
                         var meng = new window.SpeechSynthesisUtterance(storeChat);
+                        meng.pitch = localStorage.speech_pitch;
+                        meng.rate = localStorage.speech_rate;
                         window.speechSynthesis.speak(meng);
                     }
                     else{
@@ -121,6 +124,8 @@
                         }
 
                     var utterThis = new window.SpeechSynthesisUtterance(otherDiv.innerText);
+                    utterThis.pitch = localStorage.speech_pitch;
+                    utterThis.rate = localStorage.speech_rate;
                     window.speechSynthesis.speak(utterThis);
 
                 // 添加到messageBox 中
@@ -177,7 +182,12 @@
         width:40px;
         height:40px;
         background: green;
-    }     
+    }  
+    #autoJump{
+        position:absolute;
+        top:14px;
+        right:5px;
+    }   
     .messageText {
         font-size: 30px;
         font-size:16px;
