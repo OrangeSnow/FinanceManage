@@ -128,7 +128,7 @@
                     utterThis.rate = localStorage.speech_rate;
                     window.speechSynthesis.speak(utterThis);
 
-                // 添加到messageBox 中
+                // 添加到messageBox 中おはようございます
                     document.querySelector('.messageBox').appendChild(otherDiv);
                     
 

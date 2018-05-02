@@ -42,12 +42,12 @@
             </tabbar-item>
 
 
-            <tabbar-item :selected="navIndex == 6" link="/test">
+            <!-- <tabbar-item :selected="navIndex == 6" link="/test">
                 <svg slot="icon" class="nav-item nav-home-item">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-home"></use>
                 </svg>
                 <span slot="label">测试</span>
-            </tabbar-item>
+            </tabbar-item> -->
         </tabbar>
         <!--/导航条-->
 
