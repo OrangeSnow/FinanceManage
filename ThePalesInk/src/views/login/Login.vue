@@ -1,6 +1,6 @@
 <template>
-    <div class="container-view login-wrap">
-        <head-title :title="'登录：'"></head-title>
+    <div class="container-view login-wrap" id="login_bc">
+        <head-title :title="'登录'" style="background-color:rgba(0,0,0,0);color:white;"></head-title>
         <ul class="input-warp">
             <li class="input-item">
                 <x-input placeholder="请输入帐号" v-model="name_value" title="帐号：">
@@ -8,6 +8,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-icon"></use>
                     </svg>
                 </x-input>
+                <mu-auto-complete filter="noFilter" label="配置 datasource 显示 icon" labelFloat :dataSource="dataSource"/> <br/>
             </li>
             <li class="input-item">
                 <x-input type="password" placeholder="请输入密码" v-model="password_value" title="密码：">
@@ -124,6 +125,13 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
+    .input-item .weui-input{
+        color:white;
+    }
+    #login_bc{
+        background-image:url('../../../static/img/login_bg.jpg');
+        background-size: cover;
+    }
     .user-link{
         @extend %c9;
         margin: 20px;

@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" style="background-color:rgba(44,44,44,0);">
         <!--主体内容视图-->
         <transition :name="animateName">
             <!--<keep-alive>-->

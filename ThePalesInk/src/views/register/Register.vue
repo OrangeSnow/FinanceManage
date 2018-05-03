@@ -1,6 +1,6 @@
 <template>
-    <div class="container-view register-wrap">
-        <head-title :title="'注册：'"></head-title>
+    <div class="container-view register-wrap" id="register_bc" >
+        <head-title :title="'注册'" style="background-color:rgba(0,0,0,0);color:white;"></head-title>
         <ul class="input-warp">
             <li class="input-item input-required"
                 :class="{'input-error':is_name_repeat && name_value}">
@@ -228,6 +228,10 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
+    #register_bc{
+        background-image:url('../../../static/img/login_bg.jpg');
+        background-size: cover;
+    }
     .dialog-prompt{
         text-align: left;
         line-height: 1.8;
