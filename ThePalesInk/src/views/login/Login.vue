@@ -1,14 +1,14 @@
 <template>
     <div class="container-view login-wrap" id="login_bc">
-        <head-title :title="'登录'" style="background-color:rgba(0,0,0,0);color:white;"></head-title>
-        <ul class="input-warp">
+        <head-title :title="'登录'" style="background-color:rgba(0,0,0,0);color:white;margin-top:65px;font-size:30px;"></head-title>
+        <ul class="input-warp" style="width:80%;margin:23px auto 0px;">
             <li class="input-item">
                 <x-input placeholder="请输入帐号" v-model="name_value" title="帐号：">
                     <svg slot="label" class="input-icon">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-icon"></use>
                     </svg>
                 </x-input>
-                <mu-auto-complete filter="noFilter" label="配置 datasource 显示 icon" labelFloat :dataSource="dataSource"/> <br/>
+                <!-- <mu-auto-complete filter="noFilter" label="配置 datasource 显示 icon" labelFloat :dataSource="dataSource"/> <br/> -->
             </li>
             <li class="input-item">
                 <x-input type="password" placeholder="请输入密码" v-model="password_value" title="密码：">
@@ -18,7 +18,7 @@
                 </x-input>
             </li>
         </ul>
-        <div class="user-relevant">
+        <div class="user-relevant" style="width:75%;margin:10px auto;">
             <span @click=" is_remember = !is_remember " :class="{ 'remember-active-user': is_remember }" class="remember-user">
                 <i class="remember-type"></i>
                 记住密码
@@ -131,10 +131,11 @@
     #login_bc{
         background-image:url('../../../static/img/login_bg.jpg');
         background-size: cover;
+        bottom:0px;
     }
     .user-link{
         @extend %c9;
-        margin: 20px;
+        margin: 20px 140px;
     }
     .user-relevant{
         @extend %c9;
@@ -188,11 +189,15 @@
     .login-wrap,.register-wrap{
         @extend %oya;
         .sure-btn.sure-active-true{
-            background-color: #58B7FF;
-            box-shadow: 0 3px 0 0 #1D8CE0;
+            background-color: #9370DB;
+            box-shadow: 0 3px 0 0 rgb(103, 69, 172);
         }
         .sure-btn{
-            margin: 20px;
+            width:70%;
+            margin: 30px auto;
+            height: 34px;
+            line-height: 34px;
+            border-radius: 30px;
         }
         .input-error{
             border-bottom: 1px solid #FF4949;

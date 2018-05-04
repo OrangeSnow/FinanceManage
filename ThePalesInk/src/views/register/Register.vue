@@ -1,7 +1,7 @@
 <template>
     <div class="container-view register-wrap" id="register_bc" >
-        <head-title :title="'注册'" style="background-color:rgba(0,0,0,0);color:white;"></head-title>
-        <ul class="input-warp">
+        <head-title :title="'注册'" style="background-color:rgba(0,0,0,0);color:white;margin-top:65px;font-size:30px;"></head-title>
+        <ul class="input-warp" style="width:80%;margin:23px auto 0px;"> 
             <li class="input-item input-required"
                 :class="{'input-error':is_name_repeat && name_value}">
                 <x-input :min="1"
@@ -45,8 +45,9 @@
         <p class="agreement-prompt">
             点击「注册」按钮，即代表你同意<a href="#/agreement">《浪笔头协议》</a>
         </p>
+        <a href="#/login" class="user-link" style="">已有帐号？点我去登录</a>
         <i class="sure-btn" @click="sendEmail()" :class="{'sure-active-true':name_value && password_value && too_password_value == password_value}">注册</i>
-        <a href="#/login" class="user-link">已有帐号？点我去登录</a>
+        
 
         <x-dialog v-model="is_popup" class="dialog-demo">
             <div class="dialog-con">
@@ -231,6 +232,7 @@
     #register_bc{
         background-image:url('../../../static/img/login_bg.jpg');
         background-size: cover;
+        bottom:0px;
     }
     .dialog-prompt{
         text-align: left;
@@ -248,7 +250,7 @@
     .agreement-prompt{
         @extend %c9;
         @extend %f12;
-        margin: 20px;
+        margin: 20px 70px 15px;
         a{
             @extend %fwb;
             color: #58B7FF;

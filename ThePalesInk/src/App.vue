@@ -105,7 +105,6 @@
         @extend %oh;
         bottom: 54px;
         background-color: #F9FAFC;
-        border:1px solid red;
     }
     .home-wrap{
         bottom: 0;

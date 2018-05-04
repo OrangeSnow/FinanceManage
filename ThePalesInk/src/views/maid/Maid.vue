@@ -171,7 +171,6 @@
         width:100%;
         height:40px;
         background: skyblue;
-        border:1px solid blue;
         overflow:hidden;
     }
     .speechJump{

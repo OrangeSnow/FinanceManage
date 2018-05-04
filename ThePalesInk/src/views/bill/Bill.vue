@@ -10,7 +10,7 @@
             <!--过滤信息菜单-->
             <div class="filter-menu">
                 <head-title :title="'筛选：'"></head-title>
-                <ul class="input-warp">
+                <ul class="input-warp" >
                     <li class="input-item">
                         <datetime
                             title="年："
@@ -39,7 +39,7 @@
                         </datetime>
                     </li>
                 </ul>
-                <div class="menu-type-wrap">
+                <div class="menu-type-wrap" >
                     <checker
                         v-model="check_value_arr"
                         type="checkbox"
