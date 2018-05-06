@@ -1,5 +1,5 @@
 <template>
-    <div class="account-wrap">
+    <div class="account-wrap" id="account_bc">
         <head-title :title="'记账'"></head-title>
         <div class="block">
             <el-carousel height="220px">
@@ -12,6 +12,7 @@
             <a href="#/account/consumption" class="go-account go-consumption">消费</a>
             <a href="#/account/earn" class="go-account go-earn">入账</a>
         </div>
+        
     </div>
 </template>
 <script>
@@ -44,6 +45,10 @@
 </script>
 <style lang="scss">
     @import "../../../assets/scss/define";
+    #account_bc{
+        background-image:url('../../../../static/img/444.jpg');
+        background-size: cover;
+    }
     .block{
         margin-top:-13px;
     }

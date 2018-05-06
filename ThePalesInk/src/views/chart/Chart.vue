@@ -1,6 +1,6 @@
 <template>
     <div class="container-view">
-        <head-title :title="'分析：'"></head-title>
+        <head-title :title="'分析'"></head-title>
         <div class="chart-wrap">
             <scroller lock-x
                       height="-118"
@@ -8,14 +8,20 @@
                       @on-scroll="onScroll"
                       ref="chartScrollEvent">
                 <div class="chart-con">
-                    <div class="chart-item">
-                        <h2 class="chart-title">消费状况：</h2>
-                        <canvas id="consumption-chart" width="300" height="300"></canvas>
-                    </div>
-                    <div class="chart-item">
-                        <h2 class="chart-title">入账状况：</h2>
-                        <canvas id="earn-chart" width="300" height="300"></canvas>
-                    </div>
+                    <el-tabs type="border-card">
+                        <el-tab-pane label="消费图表">
+                            <div class="chart-item">
+                                <h2 class="chart-title">消费状况：</h2>
+                                <canvas id="consumption-chart" width="300" height="300"></canvas>
+                            </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="收入图表">
+                            <div class="chart-item">
+                                <h2 class="chart-title">收入状况：</h2>
+                                <canvas id="earn-chart" width="300" height="300"></canvas>
+                            </div>
+                        </el-tab-pane>
+                    </el-tabs>
                 </div>
             </scroller>
         </div>

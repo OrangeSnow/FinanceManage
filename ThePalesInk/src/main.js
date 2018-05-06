@@ -12,6 +12,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 
+
 import './assets/lib/flexible.js'
 import './assets/lib/Chart'
 import  { ToastPlugin,LoadingPlugin} from 'vux'

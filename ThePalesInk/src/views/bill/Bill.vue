@@ -3,7 +3,7 @@
         <!--主体内容-->
         <div class="container-box"
             :class="{'open-menu': is_open_menu}">
-            <head-title :title="'账单：'"></head-title>
+            <!-- <head-title :title="'账单'"></head-title> -->
             <svg @click="is_open_menu = !is_open_menu" class="bill-filter">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filter-icon"></use>
             </svg>
@@ -124,18 +124,19 @@
                           height="-118"
                           :scrollbarY="true"
                           @on-scroll="onScroll"
-                          ref="billScrollEvent">
+                          ref="billScrollEvent"
+                          class="bbb">
                     <ul class="bill-list">
-                        <li class="bill-item" v-for="(bill_item,bill_index) in bill_arr">
+                        <li class="bill-item" v-for="(bill_item,bill_index) in bill_arr" :key="bill_index">
                             <span class="bill-item-type"
                                 :class="{'earn-type': bill_item.bill_consumption_or_earn == 1,
                                  'consumption-type': bill_item.bill_consumption_or_earn == 0}">
                                 <svg class="bill-item-type-icon">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" :xlink:href="'#type-'+ bill_item.bill_type_number"></use>
                                 </svg>
-                            </span>
-                            <p class="bill-item-con">
                                 <span class="bill-item-remark" v-text="bill_item.bill_remarks || bill_item.bill_account_type[0]"></span>
+                            </span>
+                            <p class="bill-item-con">                             
                                 <span class="bill-item-sum" v-text="bill_item.bill_sum"></span>
                             </p>
                             <p class="bill-item-time">{{bill_item.bill_consumption_or_earn == 1 ? '入账' : '消费'}}时间：{{bill_item.bill_date}} {{bill_item.bill_time}}</p>
@@ -148,20 +149,21 @@
             <!--/账单信息-->
             <!--账单信息提示-->
             <div class="bill-prompt-wrap">
-                <div class="bill-prompt">
-                    <span class="bill-sum-title">入账</span>
-                    <span class="bill-sum bill-sum-earn" id="earn-sum"></span>
-                </div>
-                <i class="bill-reduce"></i>
-                <div class="bill-prompt">
-                    <span class="bill-sum-title">消费</span>
-                    <span class="bill-sum bill-sum-consumption" id="consumption-sum"></span>
-                </div>
-                <i class="bill-equal"></i>
-                <div class="bill-prompt">
+                <div class="bill-prompt1" style="border:1px solid red">
                     <span class="bill-sum-title">余额</span>
                     <span class="bill-sum bill-sum-balance" id="balance-sum"></span>
                 </div>
+                <div class="bill-prompt2" style="border:1px solid red">
+                    <span class="bill-sum-title">入账</span>
+                    <span class="bill-sum bill-sum-earn" id="earn-sum"></span>
+                </div>
+                <!-- <i class="bill-reduce"></i> -->
+                <div class="bill-prompt3" style="border:1px solid red">
+                    <span class="bill-sum-title">消费</span>
+                    <span class="bill-sum bill-sum-consumption" id="consumption-sum"></span>
+                </div>
+                <!-- <i class="bill-equal"></i> -->
+                
             </div>
             <!--/账单信息提示-->
         </div>
@@ -372,6 +374,11 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
+    .bbb{
+        background-image:url('../../../static/img/650.jpg');
+        background-size: cover;
+        
+    }
     .menu-type-wrap{
         @extend %clearfix;
         margin-top: 10px;
@@ -459,10 +466,10 @@
     }
     .bill-sum-title{
         @extend %pa;
-        @extend %f12;
         @extend %tac;
         @extend %r0;
         @extend %l0;
+        font-size:20px;
         top: 3px;
         color: #58B7FF;
     }
@@ -488,32 +495,55 @@
     }
     .bill-prompt-wrap{
         @extend %pa;
-        @extend %b0;
         @extend %r0;
         @extend %l0;
         @extend %df;
-        height: 40px;
-        background-color: rgba(255,255,255,.8);
+        top:0px;
+        height: 160px;
+        background-color: rgb(243, 239, 9);
     }
     .bill-sum{
+        @extend %pa;
+        @extend %tac;
+        @extend %r0;
+        @extend %l0;
         @extend %fwb;
+        top:30px;
+        font-size:24px;
         line-height: 35px;
     }
-    .bill-prompt{
-        @extend %df1;
-        @extend %f16;
-        @extend %tac;
-        @extend %pr;
+    .bill-prompt1{
+        position:absolute;
+        padding-top: 15px;
+        left:40%;
+        width:80px;
+        height:75px;
+    }
+    .bill-prompt2{
+        position:absolute;
+        bottom:0px;
+        width:80px;
+        height:60px;
+        left:80px;
+        padding-top: 10px;
+    }
+    .bill-prompt3{
+        position:absolute;
+        bottom:0px;
+        left:260px;
+        width:80px;
+        height:60px;
         padding-top: 10px;
     }
     .bill-cancel{
         @extend %pa;
-        @extend %f12;
+        @extend %f16;
         @extend %cfff;
         @extend %cp;
-        padding: 0 5px;
-        right: 10px;
-        bottom: 12px;
+        padding: 15px;
+        margin-left:-32px;
+        left:50%;
+        top: 82px;
         background-color: #FF4949;
         border-radius: 5px;
     }
@@ -544,7 +574,7 @@
         @extend %pa;
         @extend %w100;
         @extend %b0;
-        top: 64px;
+        top: 82px;
     }
     .bill-filter{
         @extend %pa;
@@ -616,13 +646,18 @@
         background-color: #ccc;
     }
     .bill-list{
-        margin: 0 10px 20px;
+        margin: 90px 10px 20px;
+        background-color:rgb(43, 167, 238);
+        border-radius:10px;
+        padding-top:10px;
     }
     .bill-item{
         @extend %pr;
-        margin-left: 50px;
+        margin-left: 100px;
         padding: 10px;
-        border-bottom: 1px solid #ccc;
+        height:200px;
+        border-bottom: 1px solid #ee4f4f;
+        background-color:pink;
         &:last-child{
             border-bottom: none;
         }
@@ -632,11 +667,12 @@
     }
     .bill-item-type{
         @extend %pa;
-        @extend %t50;
-        left: -50px;
-        width: 50px;
-        height: 50px;
+        top:30%;
+        left: -100px;
+        width: 100px;
+        height: 100px;
         margin-top: -25px;
+        background-color:yellow;
         &.earn-type{
             fill: #13CE66;
         }
@@ -646,27 +682,35 @@
     }
     .bill-item-type-icon{
         @extend %pa;
-        @extend %t50;
+        top:30%;
         @extend %l50;
-        width: 30px;
-        height: 30px;
-        margin-top: -15px;
-        margin-left: -15px;
+        width: 50px;
+        height: 50px;
+        margin-top: -25px;
+        margin-left: -25px;
     }
     .bill-item-con{
-        @extend %f14;
+        font-size:40px;
         @extend %fwb;
         @extend %oh;
         @extend %c3;
-        line-height: 30px;
+        padding:3px;
+        line-height: 40px;
+        background-color:#b3fa40;
+        text-align:center;
     }
     .bill-item-remark{
-        @extend %fl;
+        @extend %pa;
+        bottom:8px;
+        left:50%;
+        margin-left:-30px;
+        font-size:16px;
     }
     .bill-item-sum{
-        @extend %fr;
+        @extend %fl;
         @extend %pr;
-        padding-right: 20px;
+        margin-left:80px;
+        padding-right: 40px;
         &:after{
             @extend %pa;
             @extend %r0;
@@ -675,9 +719,10 @@
     }
     .bill-item-time{
         @extend %oh;
-        @extend %tar;
-        @extend %f12;
+        @extend %tac;
+        @extend %f16;
         @extend %c9;
+        width:274px;
         margin-right: 40px;
         height: 20px;
         line-height: 20px;

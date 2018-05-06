@@ -1,7 +1,7 @@
 <template>
-    <div class="earn-wrap">
-        <head-title :title="'入账：'"></head-title>
-        <ul class="input-warp">
+    <div class="earn-wrap" id="earn_bc">
+        <head-title :title="'入账'"></head-title>
+        <ul class="input-warp322">
             <li class="input-item input-required">
                 <calendar v-model="date_value" title="日期：" disable-future></calendar>
             </li>
@@ -22,14 +22,14 @@
                 </popup-picker>
             </li>
             <li class="input-item input-required">
-                <x-input v-model="sum_value" title="金额（￥）：" keyboard="number"></x-input>
+                <x-input id="jinge2" v-model="sum_value" title="金额（￥）：" keyboard="number"></x-input>
             </li>
             <li class="input-item">
-                <x-input v-model="remarks_value" title="备注："></x-input>
+                <x-input id="beizhu2" v-model="remarks_value" title="备注："></x-input>
             </li>
         </ul>
-        <i class="sure-btn" @click="subBill()" :class="{'sure-active-true':sum_value}">确认</i>
-        <mu-float-button id="autoJump" icon="add" class="demo-float-button" href="#/account"/>
+        <i class="sure-btn" id="earn_btn" @click="subBill()" :class="{'sure-active-true':sum_value}">确认</i>
+        <mu-float-button id="jumpA" icon="回" class="demo-float-button" href="#/account"/>
     </div>
 </template>
 <script>
@@ -127,3 +127,41 @@
         }
     }
 </script>
+<style lang="scss">
+@import "../../../assets/scss/define";
+    #earn_bc{
+        background-image:url('../../../../static/img/star.jpg');
+        background-size: cover;
+        bottom:0px;
+    }
+    #jumpA{
+        position:absolute;
+        top:70%;
+        right:45%;
+    } 
+    .input-warp322{
+        background-color: white;
+        width:88%;
+        margin:27px auto;
+        border-radius: 12px;
+        padding:45px 10px;
+        box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,0 .5em 1em rgba(10, 10, 10, 0.6);
+        border:10px solid #ee4f4f;
+    }
+    #earn_btn{
+        width:55%;
+        height:50px;
+        line-height: 50px;
+        margin:-53px auto;
+        border-radius: 25px;
+        background-color: #ee4f4f;
+        font-size:23px;
+        box-shadow: 0px 8px 3px #3f3f3f;
+    }
+    #jinge2 input{
+        color:#999;
+    }
+    #beizhu2 input{
+        color:#999;
+    }
+</style>

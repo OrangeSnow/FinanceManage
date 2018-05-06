@@ -24,11 +24,12 @@
 	        <div class="flakes2">
 	            <p>*</p>
 	        </div>
+            <!-- 月亮 -->
             <div id="iTwo" style="width: 150px; height: 150px; border-radius:75px; background-color: rgba(157, 229, 253,0.4);"></div>   
             <div id="iOne" style="width: 150px; height: 150px; border-radius:75px; background-color: rgba(157, 229, 253,0.4);"></div>  
             
             <div class="home-btn-wrap">
-                <a href="#/modify" class="go-account go-earn">修改密码</a>
+                <a href="#/modify" class="go-account go-earn sparkley">修改密码</a>
                 <i @click="is_popup = true" class="go-account go-consumption">安全退出</i>
             </div>
             <svg @click="is_open = true" class="home-arrow" v-show="!is_open">
@@ -56,6 +57,7 @@
     import CountUp from '../../assets/lib/countUp'
     import Util from '../../assets/lib/Util'
     import Tool from '../../assets/lib/Tool'
+    import $ from 'jquery'
     export default {
         name: 'home',
         data: function () {
@@ -74,6 +76,8 @@
             this.fetchBalance();
             this.gestureMobile();
             this.setNavIndex();
+        },
+        mounted(){
         },
         methods: {
             /**安全退出*/
@@ -276,8 +280,7 @@
     }
 
 
-    // 雪花特效
-    
+    // 雪花特效 
     .flakes1 {
         width: 100%;
         height: 100%;
@@ -323,4 +326,6 @@
                 transform: translate(0px, 0px);
             }
         }
+
+        // 按钮星星
 </style>

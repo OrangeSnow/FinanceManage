@@ -149,7 +149,7 @@
         span{
             padding: 0 3px;
             border-radius: 5px;
-            color: #fff !important;
+            // color: #fff !important;
             background-color: #58B7FF;
             background-color:pink;
         }
