@@ -12,9 +12,9 @@
     .header-title{
         @extend %f18;
         @extend %fwn;
-        padding: 2px;
-        color: #1D8CE0;
-        background-color:blue;
+        padding: 8px;
+        color: #fff;
+        background-color:#7e57c2;
         text-align:center;
         margin-top:0px;
     }

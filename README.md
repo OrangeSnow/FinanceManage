@@ -14,7 +14,9 @@
 
 ## 使用工具
 
-1、颜色转换工具：https://tools.guardui.net/nose/rgb_hex_color.html
+[1、颜色转换工具](https://tools.guardui.net/nose/rgb_hex_color.html)
+
+[2、踏得网（很多现成例子）](http://techbrood.com/)
 
 使用的关键技术
 
@@ -41,4 +43,18 @@
 
 ## 使用的小技术：
 
-1、磨砂玻璃效果：https://www.w3cplus.com/css3/css-secrets/frosted-glass-effect.html
+[1、磨砂玻璃效果：](https://www.w3cplus.com/css3/css-secrets/frosted-glass-effect.html)
+
+[2、VueCircleMenu 旋转气泡](https://github.com/OYsun/VueCircleMenu/blob/master/README-ZH.MD)
+
+[3、瀑布布局](https://github.com/MopTym/vue-waterfall)
+
+[4、流星特效](https://www.cnblogs.com/wisewrong/p/7124920.html)
+
+[5、月亮悬浮特效](http://wow.techbrood.com/fiddle/33773)、[一枚月亮波纹](https://www.jianshu.com/p/09db9162d35c)
+
+[6、雪花特效](http://wow.techbrood.com/fiddle/31715)
+
+[7、按钮闪烁星星特效](http://www.htmleaf.com/html5/html5-canvas/201507032158.html)
+
+[8、渐变色深蓝星空](http://wow.techbrood.com/fiddle/27222)

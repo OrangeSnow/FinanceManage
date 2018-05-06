@@ -29,6 +29,7 @@
             </li>
         </ul>
         <i class="sure-btn" @click="subBill()" :class="{'sure-active-true':sum_value}">确认</i>
+        <mu-float-button id="autoJump" icon="add" class="demo-float-button" href="#/account"/>
     </div>
 </template>
 <script>

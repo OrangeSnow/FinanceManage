@@ -94,12 +94,44 @@
         created () {
             this.$store.commit(types.JUDGE_IS_NOT_FIRST,false);
         },
+        mounted(){
+            this.speedstar2();
+        },
         components: {
             headTitle,
             XInput,
             XDialog
         },
         methods: {
+            /**流星*/
+            speedstar2(){
+                var stars = document.getElementById('register_bc')
+                var star = document.getElementsByClassName('star')
+
+                // js随机生成流星
+                for (var j = 0; j < 70; j++) {
+                    var newStar = document.createElement("div")
+                    newStar.className = "star"
+                    newStar.style.top = randomDistance(-500, -520) + 'px'
+                    newStar.style.left = randomDistance(150, 20) + 'px'
+                    stars.appendChild(newStar)
+                }
+
+                // 封装随机数方法
+                function randomDistance(max, min) {
+                    var distance = Math.floor(Math.random() * (max - min + 1) * 10 + min)
+                    return distance
+                }
+
+                // 给流星添加动画延时
+                for (var i = 0, len = star.length; i < len; i++) {
+                    if (i % 6 == 0) {
+                        star[i].style.animationDelay = '0s'
+                    } else {
+                        star[i].style.animationDelay = i * 0.4 + 's'
+                    }
+                }
+            },
             /**发邮件*/
             sendEmail () {
                 if(this.checkInput()) return;

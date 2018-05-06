@@ -1,7 +1,7 @@
 <template>
     <div class="container-view">
         <head-title :title="'聊天室233'"></head-title>
-        <div class="chart-wrap">
+        <div class="chart-wrap" style="top:42px;">
             <scroller lock-x
                       height="-118"
                       :scrollbarY="true"
@@ -138,6 +138,9 @@
                 //6、数组变字符串存入sessitionStorage
                     sessionStorage.storeChat=storeChatString;
                 },300);
+            },
+            onScroll (pos) {
+                this.scrollTop = pos.top;
             }
         }
     }
@@ -146,7 +149,7 @@
     @import "../../assets/scss/define";
     .sss{
         background-color: #D1E9E9;
-        background-image:url('../../../static/img/bc.gif');
+        background-image:url('../../../static/img/sun_rise.png');
         background-size: cover;
         padding:10px 15px;
     }
@@ -160,7 +163,7 @@
     .messageBox {
         padding:5px 5px 103px;
         border-radius:6px;
-        background-color:rgba(119,136,153,0.5);
+        background-color:rgba(255,255,255,0.3);
         box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,0 .5em 1em rgba(0, 0, 0, 0.6);
         text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
     }  

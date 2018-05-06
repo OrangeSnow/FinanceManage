@@ -1,10 +1,10 @@
 <template>
     <div class="account-wrap">
-        <head-title :title="'记账：'"></head-title>
+        <head-title :title="'记账'"></head-title>
         <div class="block">
             <el-carousel height="220px">
-            <el-carousel-item v-for="item in imgArr" :key="item" class="img_bz">
-                <img :src="item.imgsrc" >
+            <el-carousel-item v-for="item in imgArr" :key="item.index" class="img_bz" style=" background-size: cover;">
+                <img :src="item.imgsrc">
             </el-carousel-item>
             </el-carousel>
         </div>
@@ -22,10 +22,10 @@
         data(){
             return{
                 imgArr:[
-                    {imgsrc:'../../../../static/img/s1.jpg'},
-                    {imgsrc:'../../../../static/img/s2.jpg'},
-                    {imgsrc:'../../../../static/img/s3.jpg'},
-                    {imgsrc:'../../../../static/img/s4.jpg'}
+                    {index:1,imgsrc:'../../../../static/img/s1.jpg'},
+                    {index:2,imgsrc:'../../../../static/img/s2.jpg'},
+                    {index:3,imgsrc:'../../../../static/img/s3.jpg'},
+                    {index:4,imgsrc:'../../../../static/img/s4.jpg'}
                 ]
             }
         },
@@ -44,6 +44,9 @@
 </script>
 <style lang="scss">
     @import "../../../assets/scss/define";
+    .block{
+        margin-top:-13px;
+    }
     .img_bz{
         background-size: cover;
     }
