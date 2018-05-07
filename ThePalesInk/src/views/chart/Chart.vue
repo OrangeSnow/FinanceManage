@@ -8,8 +8,9 @@
                       @on-scroll="onScroll"
                       ref="chartScrollEvent">
                 <div class="chart-con">
+                    <!-- 图表模块 -->
                     <el-tabs type="border-card">
-                        <el-tab-pane label="消费图表">
+                        <el-tab-pane label="消费图表" style="margin-left:20px;">
                             <div class="chart-item">
                                 <h2 class="chart-title">消费状况：</h2>
                                 <canvas id="consumption-chart" width="300" height="300"></canvas>
@@ -151,6 +152,12 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
+    .el-tabs--border-card>.el-tabs__content{
+        height:658px;
+    }
+    .el-tabs__nav{
+        margin-left:110px;
+    }
     .chart-wrap{
         @extend %oya;
         @extend %pa;
@@ -158,7 +165,7 @@
         @extend %ios;
         @extend %b0;
         top: 44px;
-        background-color: pink;
+        // background-color: pink;
     }
     .chart-title{
         @extend %f14;

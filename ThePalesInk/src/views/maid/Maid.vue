@@ -1,6 +1,6 @@
 <template>
     <div class="container-view">
-        <head-title :title="'聊天室233'"></head-title>
+        <head-title :title="'理财聊天室'"></head-title>
         <div class="chart-wrap" style="top:42px;">
             <scroller lock-x
                       height="-118"
@@ -21,7 +21,7 @@
             <mu-raised-button label="发送" class="demo-raised-button sendbtn" id="demo_change" v-on:click="SendBtn()" primary style=""/>
         </div>
         <!-- <div class="speechJump"><a href="#/speech">语音</a></div> -->
-        <mu-float-button id="autoJump" icon="add" class="demo-float-button" href="#/speech"/>
+        <mu-float-button id="autoJump" icon="☺" class="demo-float-button" href="#/speech"/>
     </div>
 </template>
 <script>

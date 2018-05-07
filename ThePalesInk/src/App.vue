@@ -38,7 +38,7 @@
                 <svg slot="icon" class="nav-item nav-maid-item">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#type-sgls"></use>
                 </svg>
-                <span slot="label">理财女仆</span>
+                <span slot="label">理财管家</span>
             </tabbar-item>
 
 

@@ -9,7 +9,7 @@
             </svg>
             <!--过滤信息菜单-->
             <div class="filter-menu">
-                <head-title :title="'筛选：'"></head-title>
+                <head-title :title="'筛选'"></head-title>
                 <ul class="input-warp" >
                     <li class="input-item">
                         <datetime
@@ -139,8 +139,9 @@
                             <p class="bill-item-con">                             
                                 <span class="bill-item-sum" v-text="bill_item.bill_sum"></span>
                             </p>
-                            <p class="bill-item-time">{{bill_item.bill_consumption_or_earn == 1 ? '入账' : '消费'}}时间：{{bill_item.bill_date}} {{bill_item.bill_time}}</p>
-                            <i class="bill-cancel" @click="confirmRemoveBill(bill_item)">取消</i>
+                            <p class="bill-item-time">{{bill_item.bill_consumption_or_earn == 1 ? '入账' : '消费'}}时间</p>
+                            <p class="bill-item-time">{{bill_item.bill_date}} {{bill_item.bill_time}}</p>
+                            <i class="bill-cancel" @click="confirmRemoveBill(bill_item)">X</i>
                         </li>
                         <li class="bill-item-null"></li>
                     </ul>
@@ -375,7 +376,7 @@
 <style lang="scss">
     @import "../../assets/scss/define";
     .bbb{
-        background-image:url('../../../static/img/650.jpg');
+        background-image:url('../../../static/img/night.jpg');
         background-size: cover;
         
     }
@@ -471,16 +472,16 @@
         @extend %l0;
         font-size:20px;
         top: 3px;
-        color: #58B7FF;
+        color: #fff;
     }
     .bill-sum-earn{
-        color: #F7BA2A;
+        color: #fff;
     }
     .bill-sum-consumption{
-        color: #FF4949;
+        color: #fff;
     }
     .bill-sum-balance{
-        color: #13CE66;
+        color: #fff;
     }
     .bill-reduce{
         height: 2px;
@@ -500,7 +501,7 @@
         @extend %df;
         top:0px;
         height: 160px;
-        background-color: rgb(243, 239, 9);
+        background-color: rgba(255, 73, 73,1);
     }
     .bill-sum{
         @extend %pa;
@@ -540,12 +541,15 @@
         @extend %f16;
         @extend %cfff;
         @extend %cp;
-        padding: 15px;
+        width:30px;
+        height:30px;
+        line-height: 30px;
+        border-radius: 15px;
         margin-left:-32px;
-        left:50%;
-        top: 82px;
+        text-align: center;
+        right:15px;
+        bottom: 20px;
         background-color: #FF4949;
-        border-radius: 5px;
     }
     .bill-type-check-item{
         @extend %pr;
@@ -579,11 +583,12 @@
     .bill-filter{
         @extend %pa;
         @extend %cp;
+        z-index:10;
         top: 20px;
         right: 20px;
         width: 20px;
         height: 20px;
-        fill: #999;
+        fill: #fff;
     }
     .container-box{
         @extend %h100;
@@ -646,18 +651,22 @@
         background-color: #ccc;
     }
     .bill-list{
-        margin: 90px 10px 20px;
-        background-color:rgb(43, 167, 238);
+        margin: 82px 10px 20px;
+        background-color:rgba(251,227,197,0);
         border-radius:10px;
         padding-top:10px;
     }
     .bill-item{
         @extend %pr;
-        margin-left: 100px;
+        margin-top:8px;
+        margin-left: 13px;
         padding: 10px;
         height:200px;
-        border-bottom: 1px solid #ee4f4f;
-        background-color:pink;
+        background-image:url('../../../static/img/tag5.png');
+        border:8px solid #FF4949;
+        border-radius:20px;
+        background-size: cover;
+        box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,0 .5em 1em rgba(10, 10, 10, 0.6);
         &:last-child{
             border-bottom: none;
         }
@@ -667,12 +676,13 @@
     }
     .bill-item-type{
         @extend %pa;
-        top:30%;
-        left: -100px;
-        width: 100px;
-        height: 100px;
+        top:22%;
+        left: 21px;
+        width: 80px;
+        height: 88px;
         margin-top: -25px;
-        background-color:yellow;
+        background-image:url('../../../static/img/tag1.png');
+        background-size: cover;
         &.earn-type{
             fill: #13CE66;
         }
@@ -682,12 +692,12 @@
     }
     .bill-item-type-icon{
         @extend %pa;
-        top:30%;
+        top:45%;
         @extend %l50;
-        width: 50px;
-        height: 50px;
-        margin-top: -25px;
-        margin-left: -25px;
+        width: 33px;
+        height: 33px;
+        margin-top: -16px;
+        margin-left: -17px;
     }
     .bill-item-con{
         font-size:40px;
@@ -695,21 +705,22 @@
         @extend %oh;
         @extend %c3;
         padding:3px;
+        margin-top:15px;
         line-height: 40px;
-        background-color:#b3fa40;
         text-align:center;
     }
     .bill-item-remark{
         @extend %pa;
-        bottom:8px;
-        left:50%;
-        margin-left:-30px;
-        font-size:16px;
+        bottom:10px;
+        width:100%;
+        text-align:center;
+        font-size:15px;
+        // font-weight: bold;
     }
     .bill-item-sum{
         @extend %fl;
         @extend %pr;
-        margin-left:80px;
+        margin-left:145px;
         padding-right: 40px;
         &:after{
             @extend %pa;
@@ -722,9 +733,9 @@
         @extend %tac;
         @extend %f16;
         @extend %c9;
-        width:274px;
-        margin-right: 40px;
+        margin-top:10px;
         height: 20px;
         line-height: 20px;
+        margin-left:47px;
     }
 </style>

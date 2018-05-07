@@ -1,8 +1,8 @@
 <template>
     <div class="container-view login-wrap">
-        <head-title :title="'修改密码：'"></head-title>
+        <head-title :title="'声音参数'"></head-title>
         <!-- <div class="speechJump2"><a href="#/maid">聊天室</a></div> -->
-        <mu-float-button icon="star"  id="demoJump" class="demo-float-button" href="#/maid"/>
+        <mu-float-button icon="回"  id="demoJump" class="demo-float-button" href="#/maid"/>
         <form>
             <input type="text" class="txt">
             <!-- 频率调节 -->
