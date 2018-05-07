@@ -3,7 +3,7 @@
         <!--主体内容-->
         <div class="container-box"
             :class="{'open-menu': is_open_menu}">
-            <!-- <head-title :title="'账单'"></head-title> -->
+            <head-title :title="'账单'"></head-title>
             <svg @click="is_open_menu = !is_open_menu" class="bill-filter">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filter-icon"></use>
             </svg>
@@ -105,11 +105,11 @@
             <!--/过滤信息菜单-->
             <!--账单信息-->
             <div class="bill-wrap">
-                <div class="bill-null-warp" v-show="!bill_arr.length">
+                <div class="bill-null-warp" v-show="!bill_arr.length" style="color:white;">
                     <svg class="bill-list-null-icon">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#null-icon"></use>
                     </svg>
-                    <span>没有相关账单</span>
+                    <span style="font-size:18px;">没有相关账单</span>
                 </div>
                 <!--
                           :use-pulldown="true"
@@ -150,17 +150,17 @@
             <!--/账单信息-->
             <!--账单信息提示-->
             <div class="bill-prompt-wrap">
-                <div class="bill-prompt1" style="border:1px solid red">
-                    <span class="bill-sum-title">余额</span>
-                    <span class="bill-sum bill-sum-balance" id="balance-sum"></span>
+                <div class="bill-prompt1">
+                    <span class="bill-sum-title2">余额￥</span>
+                    <span class="bill-sum2 bill-sum-balance" id="balance-sum"></span>
                 </div>
-                <div class="bill-prompt2" style="border:1px solid red">
-                    <span class="bill-sum-title">入账</span>
-                    <span class="bill-sum bill-sum-earn" id="earn-sum"></span>
+                <div class="bill-prompt2" >
+                    <span class="bill-sum-title" style="float:left;">入账：</span>
+                    <span class="bill-sum bill-sum-earn" id="earn-sum" style="float:left;"></span>
                 </div>
                 <!-- <i class="bill-reduce"></i> -->
-                <div class="bill-prompt3" style="border:1px solid red">
-                    <span class="bill-sum-title">消费</span>
+                <div class="bill-prompt3" >
+                    <span class="bill-sum-title">消费：</span>
                     <span class="bill-sum bill-sum-consumption" id="consumption-sum"></span>
                 </div>
                 <!-- <i class="bill-equal"></i> -->
@@ -376,9 +376,10 @@
 <style lang="scss">
     @import "../../assets/scss/define";
     .bbb{
-        background-image:url('../../../static/img/night.jpg');
+        background-image:url('../../../static/img/shining4.gif');
         background-size: cover;
-        
+        height: 575px;
+        // background-color: #f7cc4c;
     }
     .menu-type-wrap{
         @extend %clearfix;
@@ -397,7 +398,7 @@
         @extend %ma;
         width: 100px;
         height: 50px;
-        fill: #999;
+        fill: #fff;
     }
     .dialog-con{
         padding: 20px 0;
@@ -465,17 +466,9 @@
         width: 12px;
         margin: 0 4px;
     }
-    .bill-sum-title{
-        @extend %pa;
-        @extend %tac;
-        @extend %r0;
-        @extend %l0;
-        font-size:20px;
-        top: 3px;
-        color: #fff;
-    }
+    
     .bill-sum-earn{
-        color: #fff;
+        color: #000;
     }
     .bill-sum-consumption{
         color: #fff;
@@ -501,7 +494,9 @@
         @extend %df;
         top:0px;
         height: 160px;
-        background-color: rgba(255, 73, 73,1);
+        background-image:url('../../../static/img/tiger2.jpg');
+        background-size: cover;
+        background-color: #f7cc4c;
     }
     .bill-sum{
         @extend %pa;
@@ -509,14 +504,46 @@
         @extend %r0;
         @extend %l0;
         @extend %fwb;
-        top:30px;
+        top:16px;
+        color:black;
         font-size:24px;
         line-height: 35px;
+    }
+    .bill-sum2{
+        @extend %pa;
+        @extend %tac;
+        @extend %r0;
+        @extend %l0;
+        @extend %fwb;
+        top:30px;
+        color:black;
+        font-size:32px;
+        line-height: 35px;
+    }
+    .bill-sum-title{
+        @extend %pa;
+        @extend %tac;
+        @extend %r0;
+        @extend %l0;
+        font-size:20px;
+        top: 19px;
+        left:-135px;
+        color: #000;
+    }
+    .bill-sum-title2{
+        @extend %pa;
+        @extend %tac;
+        @extend %r0;
+        @extend %l0;
+        font-size:20px;
+        top: -4px;
+        color: #000;
     }
     .bill-prompt1{
         position:absolute;
         padding-top: 15px;
-        left:40%;
+        left:9%;
+        top:35px;
         width:80px;
         height:75px;
     }
@@ -525,13 +552,13 @@
         bottom:0px;
         width:80px;
         height:60px;
-        left:80px;
+        left:85px;
         padding-top: 10px;
     }
     .bill-prompt3{
         position:absolute;
         bottom:0px;
-        left:260px;
+        left:300px;
         width:80px;
         height:60px;
         padding-top: 10px;
@@ -578,7 +605,9 @@
         @extend %pa;
         @extend %w100;
         @extend %b0;
-        top: 82px;
+        top: 144px;
+        background-image:url('../../../static/img/shining4.gif');
+        background-size: cover;
     }
     .bill-filter{
         @extend %pa;
@@ -651,19 +680,19 @@
         background-color: #ccc;
     }
     .bill-list{
-        margin: 82px 10px 20px;
+        margin: 6px 10px 20px;
         background-color:rgba(251,227,197,0);
         border-radius:10px;
         padding-top:10px;
     }
     .bill-item{
         @extend %pr;
-        margin-top:8px;
-        margin-left: 13px;
+        margin-top:12px;
+        margin-left: 3px;
         padding: 10px;
         height:200px;
         background-image:url('../../../static/img/tag5.png');
-        border:8px solid #FF4949;
+        border:6px solid #a07fda;
         border-radius:20px;
         background-size: cover;
         box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,0 .5em 1em rgba(10, 10, 10, 0.6);
@@ -705,7 +734,7 @@
         @extend %oh;
         @extend %c3;
         padding:3px;
-        margin-top:15px;
+        margin-top:21px;
         line-height: 40px;
         text-align:center;
     }
@@ -720,7 +749,7 @@
     .bill-item-sum{
         @extend %fl;
         @extend %pr;
-        margin-left:145px;
+        margin-left:158px;
         padding-right: 40px;
         &:after{
             @extend %pa;
