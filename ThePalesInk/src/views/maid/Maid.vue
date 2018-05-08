@@ -102,16 +102,23 @@
                     createDiv.innerText = inputValue;
                 // 添加到messageBox 中
                     document.querySelector('.messageBox').appendChild(createDiv); 
-
+                    console.log(this.leftmoney);
+                    var that=this;
                     setTimeout(function(){                      
                         var otherDiv = document.createElement('div');
                         otherDiv.className = 'other';
 
-                        if(inputValue=="四月报表"){
-                            otherDiv.innerText = "你四月第一次工作，挣了3000元哦！";
-                        }
-                        else if(inputValue=="五月报表"){
-                           otherDiv.innerText = "五月你只工作了半个月，因此工资只有1500哦。";
+                        if(inputValue=="收支情况"){
+                            if(localStorage.muchmoney<-100)
+                                otherDiv.innerText = "我的天，主人，我实在不想讲出来，你非但没挣钱，还花了"+localStorage.muchmoney+"元！你要好好反省自己！";
+                            else if(localStorage.muchmoney<0 && localStorage.muchmoney>-100)
+                                otherDiv.innerText = "主人，你现在的收入是赤字。你让我怎么说你才好，竟然倒贴了"+localStorage.muchmoney+"元！";
+                            else if(localStorage.muchmoney>0 && localStorage.muchmoney<200)
+                                otherDiv.innerText = "主人，你还算努力，目前赚了"+localStorage.muchmoney+"元！";
+                            else if(localStorage.muchmoney>300)
+                                otherDiv.innerText = "哇，主人，萌萌酱为你开心，你竟然赚了"+localStorage.muchmoney+"元！";
+                            else
+                                otherDiv.innerText = "主人，你很佛系，没有挣到钱，但也没有花钱。";
                         }
                         else if(inputValue=="我想和你聊聊"){
                            otherDiv.innerText = "滚犊子，老娘不约！";
@@ -217,7 +224,7 @@
     .self {
         text-align: right;
         margin-top:5px;
-        margin-left:258px;
+        margin-left:273px;
         position:relative;  
         width:80px;  
         padding:9px 19px 9px 9px;  
@@ -248,7 +255,7 @@
     .other {
         margin-top:5px;
         position:relative; 
-        margin-left:4px; 
+        margin-left:16px; 
         width:140px;  
         padding:9px 5px;  
         background:pink;  

@@ -132,9 +132,9 @@
     }
     .maidword{
         width: 240px;
-        height: 30px;
+        height: 80px;
         text-align:center;
-        font-size:18px;
+        font-size:24px;
         // border:1px solid red;
         margin:0 auto;
         color:#7e57c2;

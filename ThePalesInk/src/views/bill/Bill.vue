@@ -370,6 +370,7 @@
                     new CountUp("earn-sum", earn_sum, this.earn_sum, 2, 2).start();
                     new CountUp("consumption-sum", consumption_sum, this.consumption_sum, 2, 2).start();
                     new CountUp("balance-sum", (earn_sum-consumption_sum), (this.earn_sum - this.consumption_sum), 2, 2).start();
+                    localStorage.muchmoney=this.earn_sum - this.consumption_sum;
                 });
             },
             onScroll (pos) {
