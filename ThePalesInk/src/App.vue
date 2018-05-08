@@ -92,6 +92,9 @@
         @extend %h100;
         background-color: #F9FAFC;
     }
+    .weui-tabbar{
+        background-color: #7e57c2!important;
+    }
     #app{
         @extend %h100;
 
@@ -110,7 +113,7 @@
         bottom: 0;
     }
     .nav-item{
-        fill: #999;
+        fill: #fff;
         &.nav-home-item{
             width: 27px;
             height: 27px;
@@ -138,20 +141,20 @@
     }
     .weui-tabbar__item{
         span{
-            color: #999 !important;
+            color: #fff !important;
         }
     }
     .weui-bar__item_on{
         .nav-item{
-            fill: #58B7FF;
-            background-color:pink;
+            fill: #7e57c2;
+            background-color:#fff;
         }
         span{
             padding: 0 3px;
             border-radius: 5px;
             // color: #fff !important;
-            background-color: #58B7FF;
-            background-color:pink;
+            color:#7e57c2 !important;
+            background-color:#fff;
         }
     }
     .vux-pop-in-enter-active,.vux-pop-in-leave-active,.vux-pop-out-enter-active,.vux-pop-out-leave-active {

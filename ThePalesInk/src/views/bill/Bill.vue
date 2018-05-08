@@ -109,7 +109,7 @@
                     <svg class="bill-list-null-icon">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#null-icon"></use>
                     </svg>
-                    <span style="font-size:18px;">没有相关账单</span>
+                    <span style="font-size:18px;margin-top:-10px;">没有相关账单</span>
                 </div>
                 <!--
                           :use-pulldown="true"
@@ -239,6 +239,7 @@
             this.gestureMobile();
             /**获取账单列表*/
             this.fetchBillArr();
+            
         },
         components: {
             Scroller,
@@ -304,6 +305,22 @@
                         this.$vux.loading.hide();
                         if (result.status == 1) {
                             this.bill_arr = result.data.bills;
+
+                            // this.bill_arr.reverse();
+                            // bill_date
+                            //时间排序
+                            var compare = function (obj1, obj2) {
+                                var val1 = obj1.bill_date;
+                                var val2 = obj2.bill_date;
+                                if (val1 < val2) {
+                                    return 1;
+                                } else if (val1 > val2) {
+                                    return -1;
+                                } else {
+                                    return 0;
+                                }            
+                            } 
+                            this.bill_arr.sort(compare);
                         }
                         this.$nextTick(() => {
                             this.$refs.billScrollEvent.reset();
@@ -396,8 +413,8 @@
     .bill-list-null-icon{
         @extend %db;
         @extend %ma;
-        width: 100px;
-        height: 50px;
+        width: 135px;
+        height: 100px;
         fill: #fff;
     }
     .dialog-con{
@@ -494,7 +511,7 @@
         @extend %df;
         top:0px;
         height: 160px;
-        background-image:url('../../../static/img/tiger2.jpg');
+        background-image:url('../../../static/img/tiger4.jpg');
         background-size: cover;
         background-color: #f7cc4c;
     }

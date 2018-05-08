@@ -25,7 +25,7 @@
                 <x-input id="jinge2" v-model="sum_value" title="金额（￥）：" keyboard="number"></x-input>
             </li>
             <li class="input-item">
-                <x-input id="beizhu2" v-model="remarks_value" title="备注："></x-input>
+                <x-input id="beizhu2" v-model="remarks_value" title="自定义："></x-input>
             </li>
         </ul>
         <i class="sure-btn" id="earn_btn" @click="subBill()" :class="{'sure-active-true':sum_value}">确认</i>
