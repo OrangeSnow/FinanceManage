@@ -152,6 +152,19 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
+    .el-tabs__nav-wrap{
+        margin-top:-1px;
+    }
+    .el-tabs--border-card>.el-tabs__header {
+        background-color: #c4afe9 !important;
+        border-bottom: 1px solid #e4e7ed;
+    }
+    .el-tabs--border-card>.el-tabs__header .el-tabs__item{
+        color:#fff !important;
+    }
+    .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{
+        color:#7e57c2 !important;
+    }
     .el-tabs--border-card>.el-tabs__content{
         height:658px;
     }
@@ -164,7 +177,7 @@
         @extend %w100;
         @extend %ios;
         @extend %b0;
-        top: 44px;
+        top: 43px;
         // background-color: pink;
     }
     .chart-title{
@@ -173,6 +186,5 @@
         color: #58B7FF;
     }
     .chart-item{
-        padding: 10px;
     }
 </style>

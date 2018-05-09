@@ -22,7 +22,7 @@
 
 1、语音合成：[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesis)、[语音合成频率和音调修改DEMO](https://github.com/mdn/web-speech-api/tree/master/speak-easy-synthesis)
 
-2、语音识别：[谷歌在线语音识别demo](https://www.google.com/intl/en/chrome/demos/speech.html)、[语音识别的github地址](https://github.com/googlearchive/webplatform-samples)、[欧拉米语音识别博客](https://blog.csdn.net/ls0609/article/details/73920229#comments)和[GitHub源码](https://github.com/ls0609/WebVoiceRecognize)（但这一个看评论，其他人调通了，为毛我这里总是有问题）
+2、语音识别：[谷歌在线语音识别demo](https://www.google.com/intl/en/chrome/demos/speech.html)、[谷歌在线语音识别demo说明博客](https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API)、[语音识别的github地址](https://github.com/googlearchive/webplatform-samples)、[欧拉米语音识别博客](https://blog.csdn.net/ls0609/article/details/73920229#comments)和[GitHub源码](https://github.com/ls0609/WebVoiceRecognize)（但这一个看评论，其他人调通了，为毛我这里总是有问题）
 
 
 ## 使用的框架

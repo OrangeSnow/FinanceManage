@@ -54,7 +54,7 @@
                 <p class="dialog-prompt">
                     我们已向邮箱<strong>{{email_value}}</strong>发送了验证码(2分钟内有效)，请输入：
                 </p>
-                <div class="input-item input-required">
+                <div class="input-item input-required" id="yanzheng">
                     <x-input novalidate type="text" placeholder="请输入验证码" title="验证码：" :min="6" :max="6" v-model="code_value"></x-input>
                 </div>
             </div>
@@ -261,6 +261,9 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
+    #yanzheng .weui-cell__primary input{
+        color:#999 !important;
+    }
     #register_bc{
         background-image:url('../../../static/img/login_bg.jpg');
         background-size: cover;

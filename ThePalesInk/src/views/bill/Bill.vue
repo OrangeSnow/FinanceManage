@@ -305,19 +305,18 @@
                         this.$vux.loading.hide();
                         if (result.status == 1) {
                             this.bill_arr = result.data.bills;
-
+                            localStorage.bill_maid=JSON.stringify(this.bill_arr);
                             // this.bill_arr.reverse();
-                            // bill_date
-                            //时间排序
+                            //时间排序bill_item.bill_time
                             var compare = function (obj1, obj2) {
-                                var val1 = obj1.bill_date;
-                                var val2 = obj2.bill_date;
+                                var val1 = obj1.bill_date+obj1.bill_time;
+                                var val2 = obj2.bill_date+obj2.bill_time;
                                 if (val1 < val2) {
                                     return 1;
                                 } else if (val1 > val2) {
                                     return -1;
                                 } else {
-                                    return 0;
+                                    return 1;
                                 }            
                             } 
                             this.bill_arr.sort(compare);
@@ -692,7 +691,7 @@
         line-height: 40px;
     }
     .menu-sure-btn{
-        background-color: #58B7FF;
+        background-color:#7e57c2;
     }
     .menu-reset-btn{
         background-color: #ccc;
