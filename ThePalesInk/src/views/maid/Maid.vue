@@ -1,6 +1,6 @@
 <template>
     <div class="container-view">
-        <head-title :title="'理财聊管家'"></head-title>
+        <head-title :title="'理财管家'"></head-title>
         <div class="chart-wrap" style="top:42px;">
             <scroller lock-x
                       height="-118"
@@ -32,7 +32,7 @@
     import bc from '../../../static/img/bc.jpg'
     import { Scroller } from 'vux'
     export default {
-        name: 'chart',
+        name: 'maid',
         data () {
             return {
                 consumption_chart_arr: [0,0,0,0,0,0,0,0],
@@ -90,8 +90,8 @@
                 //获取消费数据
                 var bill_maid2=JSON.parse(localStorage.bill_maid);
                 var bill_type=[0,0,0,0,0];
-                console.log(bill_maid2);
-
+                //console.log(bill_maid2);
+ console.log(bill_type[4]);
                 for(var i=0;i<bill_maid2.length;i++){
                     if(bill_maid2[i].bill_account_type[0]=="水果零食" || bill_maid2[i].bill_account_type[0]=="餐饮伙食")
                         bill_type[0]=bill_type[0]+parseInt(bill_maid2[i].bill_sum);
@@ -101,11 +101,12 @@
                         bill_type[2]=bill_type[2]+parseInt(bill_maid2[i].bill_sum);
                     else if(bill_maid2[i].bill_account_type[0]=="医疗药物")
                         bill_type[3]=bill_type[3]+parseInt(bill_maid2[i].bill_sum);
-                    else
+                    else if(bill_maid2[i].bill_account_type[0]=="网上购物" || bill_maid2[i].bill_account_type[0]=="其他消费")
                         bill_type[4]=bill_type[4]+parseInt(bill_maid2[i].bill_sum);
                 }
+
                 localStorage.bill_typelist=JSON.stringify(bill_type);
-                console.log(localStorage.bill_typelist);
+                //console.log(localStorage.bill_typelist);
 
 
                 //4、对话内容
@@ -136,25 +137,25 @@
                         }
                         console.log(bill_typelistsum);
                         if(inputValue=="收支情况"){
-                            if(moneynum<-100)
-                                otherDiv.innerText = "我的天，主人，我实在不想讲出来，你非但没挣钱，还花了"+moneynum+"元！你要好好反省自己！";
+                            if(moneynum<=-100)
+                                otherDiv.innerText = "我的天，主人，我实在不想讲出来，你非但没挣钱，还花了"+-moneynum+"元！你要好好反省自己！";
                             else if(moneynum<0 && moneynum>-100)
-                                otherDiv.innerText = "主人，你现在的收入是赤字。你让我怎么说你才好，竟然倒贴了"+localStorage.muchmoney+"元！";
+                                otherDiv.innerText = "主人，你现在的收入是赤字。你让我怎么说你才好，竟然倒贴了"+-moneynum+"元！";
                             else if(moneynum>0 && moneynum<200)
                                 otherDiv.innerText = "主人，你还算努力，目前赚了"+moneynum+"元！";
-                            else if(moneynum>200)
+                            else if(moneynum>=200)
                                 otherDiv.innerText = "哇，主人，萌萌酱为你开心，你竟然赚了"+moneynum+"元！";
                             else
                                 otherDiv.innerText = "主人，你很佛系，没有挣到钱，但也没有花钱。";
                         }
                         else if(inputValue=="income and expenditure"){
-                            if(localStorage.muchmoney<-100)
-                                otherDiv.innerText = "My God, Master, I really don’t want to say it. Not only did you not make money, it took "+moneynum+" yuan! You have to reflect on yourself!";
-                            else if(moneynum<0 && moneynum>=-100)
-                                otherDiv.innerText = "Master, your current income is a deficit. How do you let me say you? I turned it down "+moneynum+" yuan!";
-                            else if(moneynum>0 && moneynum<=200)
+                            if(localStorage.muchmoney<=-100)
+                                otherDiv.innerText = "My God, Master, I really don’t want to say it. Not only did you not make money, it took "+Math.abs(moneynum)+" yuan! You have to reflect on yourself!";
+                            else if(moneynum<0 && moneynum>-100)
+                                otherDiv.innerText = "Master, your current income is a deficit. How do you let me say you? I turned it down "+-moneynum+" yuan!";
+                            else if(moneynum>0 && moneynum<200)
                                 otherDiv.innerText = "Master, you're still working hard, currently earning "+moneynum+" yuan!";
-                            else if(moneynum>200)
+                            else if(moneynum>=200)
                                 otherDiv.innerText = "Wow, master, Meng Meng jiang is happy for you, you actually earned "+moneynum+" yuan!";
                             else
                                 otherDiv.innerText = "Master, you are a Buddha, and you have not earned money, but you have not spent money.";
@@ -177,6 +178,9 @@
                             }
                             else if(bill_typelistn[4] / bill_typelistsum > 0.5){
                                 otherDiv.innerText = "主人，你太会买买买了，钱都花在网购上，都已经花了"+bill_typelistn[4]+"元！你个败家子。";
+                            }
+                            else{
+                                otherDiv.innerText = "主人，你这阵子一分钱都没花，是不是在吃土。";
                             }
                         }
                         else{

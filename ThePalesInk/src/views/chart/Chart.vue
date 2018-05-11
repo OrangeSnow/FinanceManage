@@ -6,7 +6,8 @@
                       height="-118"
                       :scrollbarY="true"
                       @on-scroll="onScroll"
-                      ref="chartScrollEvent">
+                      ref="chartScrollEvent"
+                      class="ppp">
                 <div class="chart-con">
                     <!-- 图表模块 -->
                     <el-tabs type="border-card">
@@ -152,6 +153,11 @@
 </script>
 <style lang="scss">
     @import "../../assets/scss/define";
+    .ppp{
+        background-image:url('../../../static/img/princess.jpg');
+        background-size: cover;
+        height: 641px!important;
+    }
     .el-tabs__nav-wrap{
         margin-top:-1px;
     }
@@ -168,6 +174,15 @@
     .el-tabs--border-card>.el-tabs__content{
         height:658px;
     }
+    .el-tabs--border-card>.el-tabs__content{
+       background-color:rgba(0,0,0,0);
+       background-image:url('../../../static/img/princess.jpg');
+       background-size: cover;
+       height: 641px;
+    }
+    .el-tabs--border-card{
+        
+    }
     .el-tabs__nav{
         margin-left:110px;
     }
@@ -178,7 +193,6 @@
         @extend %ios;
         @extend %b0;
         top: 43px;
-        // background-color: pink;
     }
     .chart-title{
         @extend %f14;
@@ -186,5 +200,6 @@
         color: #58B7FF;
     }
     .chart-item{
+       
     }
 </style>

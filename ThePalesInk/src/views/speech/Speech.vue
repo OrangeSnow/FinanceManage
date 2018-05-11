@@ -41,7 +41,7 @@
     import Tool from '../../assets/lib/Tool'
     import { XInput } from 'vux'
     export default {
-        name: 'modify',
+        name: 'speech',
         data () {
             return {
                 old_password_value: '',
