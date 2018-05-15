@@ -43,7 +43,7 @@
             </li>
         </ul>
         <p class="agreement-prompt">
-            点击「注册」按钮，即代表你同意<a href="#/agreement">《浪笔头协议》</a>
+            点击「注册」按钮，即代表你同意<a href="#/agreement">《协议》</a>
         </p>
         <a href="#/login" class="user-link" style="">已有帐号？点我去登录</a>
         <i class="sure-btn" @click="sendEmail()" :class="{'sure-active-true':name_value && password_value && too_password_value == password_value}">注册</i>

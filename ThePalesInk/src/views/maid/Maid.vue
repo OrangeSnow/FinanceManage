@@ -90,8 +90,8 @@
                 //获取消费数据
                 var bill_maid2=JSON.parse(localStorage.bill_maid);
                 var bill_type=[0,0,0,0,0];
-                //console.log(bill_maid2);
- console.log(bill_type[4]);
+                console.log(bill_maid2);
+ //console.log(bill_type[4]);
                 for(var i=0;i<bill_maid2.length;i++){
                     if(bill_maid2[i].bill_account_type[0]=="水果零食" || bill_maid2[i].bill_account_type[0]=="餐饮伙食")
                         bill_type[0]=bill_type[0]+parseInt(bill_maid2[i].bill_sum);

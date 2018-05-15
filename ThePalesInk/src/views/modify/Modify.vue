@@ -1,7 +1,7 @@
 <template>
-    <div class="container-view login-wrap">
-        <head-title :title="'修改密码：'"></head-title>
-        <ul class="input-warp">
+    <div class="container-view login-wrap" id="cos_bc">
+        <head-title :title="'修改密码'"></head-title>
+        <ul class="input-warp484">
             <li class="input-item">
                 <x-input type="password" placeholder="请输入旧密码" :min="6" :max="6" v-model="old_password_value">
                     <svg slot="label" class="input-icon">
@@ -25,6 +25,7 @@
             </li>
         </ul>
         <i class="sure-btn" @click="subFun()" :class="{'sure-active-true': old_password_value && password_value && too_password_value == password_value}">确认</i>
+        <mu-float-button id="jumpMM" icon="回" class="demo-float-button" href="#/"/>
     </div>
 </template>
 <script>
@@ -108,3 +109,27 @@
         }
     }
 </script>
+<style lang="scss">
+    #cos_bc .input-item .weui-input{
+        color:black;
+    }
+    #cos_bc{
+        background-image:url('../../../static/img/bc.jpg');
+        background-size: cover;
+        bottom:0px;
+    }
+    #jumpMM{
+        position:absolute;
+        top:70%;
+        right:45%;
+    }
+    .input-warp484{
+        background-color: white;
+        width:88%;
+        margin:27px auto;
+        border-radius: 12px;
+        padding:45px 10px;
+        box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,0 .5em 1em rgba(10, 10, 10, 0.6);
+        border:10px solid #ee4f4f;
+    }
+</style>
